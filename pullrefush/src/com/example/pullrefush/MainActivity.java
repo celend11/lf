@@ -1,5 +1,6 @@
 package com.example.pullrefush;
 
+import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -37,6 +38,11 @@ public class MainActivity extends Activity {
 			da[i]=i;
 		}
 		Mydapter adpter=new Mydapter(MainActivity.this,da);
+//		TextView tv2=new TextView(MainActivity.this);
+//		LayoutParams lp=new LayoutParams(1,-100);
+//		tv2.setLayoutParams(lp);
+//		tv2.setText("ÕýÔÚË¢ÐÂ¡£¡£¡£¡£");
+//		list.addHeaderView(tv2);
 		list.setAdapter(adpter);
 		linelayoutheght=list.getMeasuredHeight();
 		Toast.makeText(MainActivity.this,linelayoutheght+"",Toast.LENGTH_LONG).show();
