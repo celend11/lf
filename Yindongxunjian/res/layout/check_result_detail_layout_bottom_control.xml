@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_marginTop="@dimen/dp10"
+              android:background="@color/transparent"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+        <RelativeLayout
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:id="@+id/check_result_detail_bottom_add_hidden"
+                android:layout_height="@dimen/dp55">
+
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/check_result_item_arrow"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:src="@drawable/arrow_right_icon"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    style="@style/textBlueStyleSmall"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:id="@+id/check_result_item_title"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="+隐患说明"
+                    />
+        </RelativeLayout>
+
+        <include layout="@layout/line_all"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55"
+            android:id="@+id/check_result_control_parent"
+            android:padding="@dimen/dp5"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+        <ImageView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:id="@+id/delete_detail_for_check_result"
+                android:src="@drawable/delete_selector"
+                android:visibility="visible"
+                android:textColor="@color/white"/>
+
+        <ImageView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/confirm_detail_for_check_result"
+                android:clickable="true"
+                android:src="@drawable/confirm_selector"
+                android:visibility="visible"
+                android:layout_marginLeft="@dimen/dp5"
+                android:textColor="@color/white"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

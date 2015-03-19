@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/bottom_gray"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/common_title"/>
+
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/input_border_"
+            android:id="@+id/add_area_submit_parent"
+            android:padding="5dip">
+
+        <Button
+                android:id="@+id/feedprofile_btn_send"
+                android:layout_width="@dimen/dp65"
+                android:layout_height="46dip"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/submit_small_btn_selector"
+                android:layout_marginLeft="@dimen/dp5"
+                android:textColor="@color/white"/>
+        <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+        <EditText
+                android:id="@+id/feedprofile_eet_editer"
+                android:layout_width="fill_parent"
+                android:layout_height="45dip"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="3dip"
+                android:layout_toLeftOf="@+id/feedprofile_btn_send"
+                android:background="@drawable/input_border_"
+                android:cursorVisible="true"
+                android:hint="请自定义检查项名称"
+                android:paddingLeft="@dimen/dp5"
+                android:paddingRight="@dimen/dp5"
+                android:focusable="true"
+                android:gravity="left|center"
+                android:maxLength="120"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/text_color"
+                android:textCursorDrawable="@null"
+                android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_above="@id/add_area_submit_parent"
+            android:layout_below="@id/common_title_layout"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/add_check_project_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <!--<include layout="@layout/add_check_project_layout_inner"/>-->
+
+            <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dip"-->
+                    <!--android:layout_marginTop="@dimen/dp10"/>-->
+
+            <!--<include layout="@layout/add_check_project_layout_inner"/>-->
+
+            <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dip"-->
+                    <!--android:layout_marginTop="@dimen/dp10"/>-->
+
+            <!--<include layout="@layout/get_custom_view"/>-->
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--创建专属检查单-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="@color/bottom_gray"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+                android:background="@color/bottom_gray"
+                android:text="创建专项检查"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp10"
+                style="@style/textStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55"/>
+
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/list_view_item_selecter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyleSmall"
+                    android:textSize="@dimen/sp16"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="文件编号"
+                    />
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:layout_marginLeft="@dimen/dp10"
+                    style="@style/editTextStyle"
+                    android:text="请输入文件编号30汉字之内"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+        </LinearLayout>
+
+        <include layout="@layout/line_all"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:id="@+id/accept_check_project_parent_id"
+                android:background="@drawable/list_view_item_selecter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyleSmall"
+                    android:textSize="@dimen/sp16"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="受检项目"
+                    />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyle"
+                    android:text="*"
+                    android:layout_marginLeft="@dimen/dp3"
+                    android:textColor="@color/red"
+                    />
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp10"
+                    style="@style/editTextStyle"
+                    android:text="请选择"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:src="@drawable/arrow_right_icon"/>
+        </LinearLayout>
+
+        <include layout="@layout/line_all"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:id="@+id/accept_check_time_parent_id"
+                android:background="@drawable/list_view_item_selecter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyleSmall"
+                    android:textSize="@dimen/sp16"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="检查时间"
+                    />
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyle"
+                    android:text="*"
+                    android:layout_marginLeft="@dimen/dp3"
+                    android:textColor="@color/red"
+                    android:layout_weight="1"
+                    />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2015-02-13"
+                    style="@style/editTextStyle"
+                    android:gravity="center"
+                    />
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:src="@drawable/arrow_right_icon"/>
+        </LinearLayout>
+
+        <include layout="@layout/line_all"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/list_view_item_selecter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyleSmall"
+                    android:textSize="@dimen/sp16"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="发起单位"
+                    />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyle"
+                    android:text="*"
+                    android:layout_marginLeft="@dimen/dp3"
+                    android:textColor="@color/red"
+                    />
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp10"
+                    style="@style/editTextStyle"
+                    android:text="手动输入，20汉字之内"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:src="@drawable/arrow_right_icon"/>
+        </LinearLayout>
+
+        <include layout="@layout/line_all"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:id="@+id/accept_check_area_parent_id"
+                android:background="@drawable/list_view_item_selecter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyleSmall"
+                    android:textSize="@dimen/sp16"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="受检负责人"
+                    />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyle"
+                    android:text="*"
+                    android:layout_marginLeft="@dimen/dp3"
+                    android:textColor="@color/red"
+                    />
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp10"
+                    style="@style/editTextStyle"
+                    android:text="请选择"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:src="@drawable/arrow_right_icon"/>
+        </LinearLayout>
+
+        <include layout="@layout/line_all"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/list_view_item_selecter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyleSmall"
+                    android:textSize="@dimen/sp16"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="发起事由"
+                    />
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp10"
+                    style="@style/editTextStyle"
+                    android:text="手动输入，30汉字之内"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:src="@drawable/arrow_right_icon"/>
+        </LinearLayout>
+
+        <include layout="@layout/line_all"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/list_view_item_selecter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyleSmall"
+                    android:textSize="@dimen/sp16"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="检查方式"
+                    />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyle"
+                    android:text="*"
+                    android:layout_marginLeft="@dimen/dp3"
+                    android:textColor="@color/red"
+                    />
+
+            <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    >
+                <CheckBox
+                        android:text="资料"
+                        android:button="@drawable/inner_check_box_selector"
+                        style="@style/editTextStyle"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <CheckBox
+                        android:text="现场"
+                        android:layout_marginLeft="@dimen/dp10"
+                        android:button="@drawable/inner_check_box_selector"
+                        style="@style/editTextStyle"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <include layout="@layout/line_all"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/list_view_item_selecter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyleSmall"
+                    android:textSize="@dimen/sp16"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="参与人员"
+                    />
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp10"
+                    style="@style/editTextStyle"
+                    android:text="张三丰"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:src="@drawable/arrow_right_icon"/>
+        </LinearLayout>
+
+        <include layout="@layout/line_all"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/list_view_item_selecter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp55">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textStyleSmall"
+                    android:textSize="@dimen/sp16"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_weight="1"
+                    android:text="备注"
+                    />
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp10"
+                    style="@style/editTextStyle"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="请填写备注"
+                    android:singleLine="true"
+                    android:ellipsize="end"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:src="@drawable/arrow_right_icon"/>
+        </LinearLayout>
+
+        <ImageView
+                android:src="@drawable/next_setp_selector"
+                android:id="@+id/proper_next_step_btn_id"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/dp10"
+                android:layout_height="@dimen/dp55"/>
+    </LinearLayout>
+</ScrollView>

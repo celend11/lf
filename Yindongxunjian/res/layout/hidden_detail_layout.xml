@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_height="@dimen/dp30">
+        <ImageView
+                android:src="@drawable/trash_selector"
+                style="@style/textStyle"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:id="@+id/hidden_detail_delete_btn"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:text="风险因素1"
+                android:layout_centerVertical="true"
+                style="@style/textStyle"
+                android:id="@+id/hidden_detail_title"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <EditText
+            style="@style/editTextStyle"
+            android:hint="请输入风险因素"
+            android:singleLine="true"
+            android:layout_toLeftOf="@id/trash_icon"
+            android:background="@drawable/input_border"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp10"
+            android:id="@+id/hidden_detail_detail_userIO"
+            android:textColorHint="@color/gray"
+            android:layout_margin="@dimen/dp10"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:src="@drawable/media_selector"
+                style="@style/textStyle"
+                android:layout_alignParentRight="true"
+                android:id="@+id/hidden_detail_upload_img"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:clickable="true"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="match_parent"/>
+        <ImageView
+                android:src="@drawable/record_selector"
+                style="@style/textStyle"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp10"
+                android:clickable="true"
+                android:id="@+id/hidden_detail_upload_record"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <!--<include layout="@layout/media_collection"/>-->
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/id_recyclerview_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp130"
+            android:layout_marginTop="@dimen/dp20"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:visibility="visible"
+            android:scrollbars="none"/>
+
+
+
+
+
+</LinearLayout>

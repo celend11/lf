@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+            android:text="请输入"
+            style="@style/textStyle"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp40"/>
+    <EditText
+        android:id="@+id/dialog_edittext_enter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_default"
+        android:gravity="center_vertical"
+        style="@style/textStyleSmall"
+        android:imeOptions="actionNext"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:maxLength="16"
+        android:singleLine="true" >
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>

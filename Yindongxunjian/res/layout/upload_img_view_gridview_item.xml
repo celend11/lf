@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp10"
+        android:orientation="vertical">
+
+    <LinearLayout
+            android:id="@+id/create_post_add_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/upload_img_item_iv_id"
+                android:layout_width="@dimen/dp95"
+                android:layout_height="@dimen/dp95"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/dp5"
+                android:padding="@dimen/dp3"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_launcher"/>
+
+        <!--<TextView-->
+                <!--android:id="@+id/create_post_add_pic_tv"-->
+                <!--android:layout_width="@dimen/dp95"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/dp5"-->
+                <!--android:gravity="center"-->
+                <!--android:ellipsize="end"-->
+                <!--android:singleLine="true"-->
+                <!--android:layout_gravity="center"-->
+                <!--style="@style/editTextStyle"-->
+                <!--android:text="添加照片"-->
+            <!--/>-->
+
+    </LinearLayout>
+
+    <!--<ImageView-->
+            <!--android:id="@+id/create_post_del_pic_iv_id"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:contentDescription="@string/app_name"-->
+            <!--android:layout_alignTop="@id/create_post_add_pic"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_alignRight="@id/create_post_add_pic"-->
+            <!--android:src="@drawable/create_post_del_pic"/>-->
+
+</RelativeLayout>

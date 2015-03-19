@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55"
+            android:background="#f7f9f9"
+            android:baselineAligned="false">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/inner_ck_unselect"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/accept_check_project_ck"
+                android:layout_marginRight="@dimen/dp10"/>
+
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left|center_vertical"
+                android:singleLine="true"
+                android:id="@+id/accept_check_project_title"
+                android:layout_toLeftOf="@id/accept_check_project_ck"
+                android:text="人力资源产业园"
+                android:layout_marginLeft="@dimen/dp10"
+                style="@style/textStyle"
+                android:textSize="@dimen/sp16"/>
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/line"/>
+
+</LinearLayout>

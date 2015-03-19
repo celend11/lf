@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dip"-->
+            <!--android:layout_marginTop="@dimen/dp10"/>-->
+
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/list_view_item_selecter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+        <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                style="@style/textStyleSmall"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_weight="1"
+                android:text="检查结果综合描述"
+                />
+        <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginLeft="@dimen/dp10"
+                style="@style/editTextStyle"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="描述结果"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+    </LinearLayout>
+
+    <include layout="@layout/line_all"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:id="@+id/submit_check_time"
+            android:background="@drawable/list_view_item_selecter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+        <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                style="@style/textStyleSmall"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_weight="1"
+                android:text="检查时间"
+                />
+        <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginLeft="@dimen/dp10"
+                style="@style/editTextStyle"
+                android:layout_weight="2"
+                android:id="@+id/submit_check_time_tv"
+                android:gravity="right"
+                android:text="2015-02-14"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+    </LinearLayout>
+
+    <include layout="@layout/line_all"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:clickable="true"
+            android:id="@+id/submit_join_person_parent"
+            android:background="@drawable/list_view_item_selecter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+        <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                style="@style/textStyleSmall"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_weight="1"
+                android:text="参与人员"
+                />
+        <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginLeft="@dimen/dp10"
+                style="@style/editTextStyle"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:id="@+id/submit_join_person_tv"
+                android:text="请填写参与人员"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+    </LinearLayout>
+
+    <include layout="@layout/line_all"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55"
+            android:id="@+id/check_result_control_parent"
+            android:padding="@dimen/dp5"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_alignParentBottom="true">
+
+        <ImageView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/delete_selector"
+                android:visibility="visible"
+                android:textColor="@color/white"/>
+
+        <ImageView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/submit_normal_selector"
+                android:visibility="visible"
+                android:clickable="true"
+                android:layout_marginLeft="@dimen/dp5"
+                android:textColor="@color/white"/>
+    </LinearLayout>
+
+
+</LinearLayout>

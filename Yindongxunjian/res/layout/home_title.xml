@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 共同标题栏 根节点的layout_width和layout_height会被ViewStub覆盖 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/common_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/commont_title_height"
+                android:gravity="center"
+                android:background="@color/title_bgcolor">
+
+
+
+    <ImageView
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:src="@drawable/main_title_icon"
+            />
+
+    <TextView
+            android:id="@id/common_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="当前用户:%s"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
+
+
+</LinearLayout>

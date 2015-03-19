@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/dp55">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/textStyle"
+            android:textSize="@dimen/sp16"
+            android:gravity="center"
+            android:id="@+id/accept_check_aera_tv_id"
+            android:layout_marginLeft="@dimen/dp10"
+            android:text="检查区域1"
+            />
+
+    <View
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/accept_check_aera_ck"
+            style="@style/CustomCheckboxTheme"
+            android:layout_marginRight="@dimen/dp10"
+            />
+
+    <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/inner_ck_unselect"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:id="@+id/accept_check_aera_ck"-->
+            <!--android:layout_marginRight="@dimen/dp10"/>-->
+
+
+</LinearLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@drawable/login_bgk"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <View
+            android:layout_width="match_parent"
+            android:layout_weight="1.5"
+            android:layout_height="0dip"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dip">
+
+        <RelativeLayout
+                android:id="@+id/userland_user_linear"
+                android:layout_width="fill_parent"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"
+                android:layout_height="@dimen/dp55"
+                android:gravity="center_vertical"
+                android:background="@drawable/common_edit_text_selector"
+                android:orientation="horizontal">
+
+            <EditText
+                    android:id="@+id/userland_user_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/userland_id_icon"
+                    android:paddingLeft="@dimen/dp20"
+                    android:drawablePadding="5dip"
+                    android:gravity="center_vertical"
+                    android:hint="请输入用户名"
+                    android:textSize="15sp"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/common_text_color"
+                    android:textColorHint="@color/common_hint_color"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/userland_pwd_linear"
+                android:layout_width="fill_parent"
+                android:layout_marginTop="@dimen/dp10"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_height="@dimen/dp55"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"
+                android:gravity="center_vertical"
+                android:background="@drawable/common_edit_text_selector"
+                android:orientation="horizontal">
+
+            <EditText
+                    android:id="@+id/userland_pwd_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/pws_id_icon"
+                    android:paddingLeft="@dimen/dp20"
+                    android:drawablePadding="5dip"
+                    android:hint="请输入密码"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:inputType="textPassword"
+                    android:textColor="@color/common_text_color"
+                    android:textColorHint="@color/common_hint_color"/>
+        </RelativeLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginLeft="@dimen/dp30"
+                android:layout_height="wrap_content">
+            <CheckBox
+                	android:id="@+id/savepass"
+                    android:background="@color/transparent"
+                    android:layout_width="@dimen/dp40"
+                    android:button="@drawable/check_box_selector"
+                    android:textSize="@dimen/sp16"
+                    android:gravity="center_vertical"
+                    android:checked="true"
+                    android:paddingLeft="@dimen/dp10"
+                    android:textColor="@color/common_text_color"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    style="@style/textStyleSmall"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="记住密码"
+                    />
+        </LinearLayout>
+        <ImageView
+                android:src="@drawable/login_selector"
+                android:layout_width="match_parent"
+                android:scaleType="centerInside"
+                android:id="@+id/start_login"
+                android:clickable="true"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_height="@dimen/dp55"/>
+
+
+		
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dip"/>
+
+
+</LinearLayout>

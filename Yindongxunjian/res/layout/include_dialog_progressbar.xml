@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/custom_progress_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/loading_c_bg"
+        android:orientation="vertical">
+
+    <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/dp10"
+            android:layout_margin="@dimen/dp10"
+            style="@android:style/Widget.Holo.ProgressBar"
+            android:indeterminateDuration="1800"/>
+
+    <TextView
+            android:id="@+id/custom_imageview_progress_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8.0dip"
+            android:gravity="center"
+            style="@style/textStyleSmall"
+            android:text="加载中..."
+            />
+
+</LinearLayout>

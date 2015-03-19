@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+            android:orientation="horizontal"
+            android:background="@drawable/list_view_item_selecter"
+            android:id="@+id/check_result_inner_item_parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55">
+
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/check_result_item_arrow"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp10"
+                android:src="@drawable/arrow_right_icon"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/textStyleSmall"
+                android:textColor="@color/common_text_color_dark"
+                android:layout_toLeftOf="@id/check_result_item_arrow"
+                android:id="@+id/check_result_item_result"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dp10"
+                android:text="未填写"
+                />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/textStyleSmall"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/check_result_item_result"
+                android:gravity="center_vertical"
+                android:id="@+id/check_result_item_name"
+                android:layout_marginLeft="@dimen/dp10"
+                android:text="分布工程1-区域1-分项工程1"
+                />
+    </RelativeLayout>
+    <include layout="@layout/line_all"/>
+</LinearLayout>

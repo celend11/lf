@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55"
+            android:background="@color/history"
+            android:orientation="horizontal">
+
+        <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="@dimen/dp55"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingBottom="@dimen/dp5"
+                    android:src="@drawable/inner_check_box_selector"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:text="最近一周"
+                    android:textColor="#727272"
+                    style="@style/editTextStyle"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="@dimen/dp55"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingBottom="@dimen/dp5"
+                    android:src="@drawable/inner_check_box_selector"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:text="更早"
+                    android:textColor="#727272"
+                    style="@style/editTextStyle"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp55"
+            android:background="@color/history"
+            android:orientation="horizontal">
+        <LinearLayout
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:layout_height="@dimen/dp55"
+                android:orientation="horizontal">
+            <EditText
+                	android:id="@+id/start_time"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dp10"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@drawable/input_border"
+                    android:gravity="center_vertical"
+                    style="@style/textStyleSmall"
+                    android:hint="开始时间"
+                    android:imeOptions="actionNext"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:maxLength="16"
+                    android:singleLine="true">
+                <requestFocus/>
+            </EditText>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="至"
+                    android:textColor="#727272"
+                    style="@style/editTextStyle"/>
+            <EditText
+                	android:id="@+id/end_time"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/dp10"
+                    android:layout_height="@dimen/dp40"
+                    android:background="@drawable/input_border"
+                    android:gravity="center_vertical"
+                    style="@style/textStyleSmall"
+                    android:hint="结束时间"
+                    android:imeOptions="actionNext"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:maxLength="16"
+                    android:singleLine="true">
+                <requestFocus/>
+            </EditText>
+
+
+        </LinearLayout>
+        <ImageView
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/dp10"
+                android:paddingTop="@dimen/dp5"
+                android:paddingBottom="@dimen/dp5"
+                android:src="@drawable/search"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
