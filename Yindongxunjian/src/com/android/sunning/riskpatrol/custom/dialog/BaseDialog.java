@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.custom.HandyTextView;
 
 public class BaseDialog extends Dialog implements

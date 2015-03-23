@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 
 /**
  * Created by sunning on 15/2/27.

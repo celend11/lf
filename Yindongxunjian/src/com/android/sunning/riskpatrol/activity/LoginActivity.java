@@ -14,7 +14,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.custom.dialog.ProgressBarDialog;
 import com.android.sunning.riskpatrol.db.DBHelper;
 import com.android.sunning.riskpatrol.entity.BaseEntity;

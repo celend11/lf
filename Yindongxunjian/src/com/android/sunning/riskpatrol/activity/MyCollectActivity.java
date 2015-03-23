@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.adapter.Adapter4Collect;
 import com.android.sunning.riskpatrol.adapter.CommonAdapter;
 import com.android.sunning.riskpatrol.entity.E_MyCollect;

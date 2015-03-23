@@ -24,7 +24,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 
 public class ActionSheet extends Fragment implements OnClickListener {
 

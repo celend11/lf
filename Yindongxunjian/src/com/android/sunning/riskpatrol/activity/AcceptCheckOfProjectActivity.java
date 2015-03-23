@@ -1,17 +1,17 @@
 package com.android.sunning.riskpatrol.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import com.android.sunning.riskpatrol.R;
-import com.android.sunning.riskpatrol.custom.CollapsibleLinearLayout;
-import com.android.sunning.riskpatrol.util.Utils;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.android.sunning.riskpatrol.custom.CollapsibleLinearLayout;
+import com.example.yindongxunjian.R;
 
 /**
  * Created by sunning on 15/2/13.

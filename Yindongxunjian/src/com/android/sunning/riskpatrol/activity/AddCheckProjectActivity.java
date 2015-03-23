@@ -3,13 +3,16 @@ package com.android.sunning.riskpatrol.activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.*;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
 import com.android.sunning.riskpatrol.entity.generate.Area;
 import com.android.sunning.riskpatrol.entity.generate.JianChaXiangMu;
 import com.android.sunning.riskpatrol.entity.generate.PatrolItem;
-import com.lidroid.xutils.util.LogUtils;
+import com.example.yindongxunjian.R;
 
 /**
  * Created by sunning on 15/2/15.

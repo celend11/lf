@@ -1,18 +1,17 @@
 package com.android.sunning.riskpatrol.activity;
 
+import java.util.List;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
 import com.android.sunning.riskpatrol.adapter.Adapter4AcceptCheckOfProjectList;
 import com.android.sunning.riskpatrol.adapter.CommonAdapter;
-import com.android.sunning.riskpatrol.entity.generate.Datum;
 import com.android.sunning.riskpatrol.entity.generate.login.Site;
-import com.lidroid.xutils.util.LogUtils;
-
-import java.util.List;
+import com.example.yindongxunjian.R;
 
 /**
  * Created by sunning on 15/2/13.

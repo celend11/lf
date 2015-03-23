@@ -26,7 +26,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.View;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.custom.crop.*;
 
 import java.io.IOException;

@@ -16,7 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.*;
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.adapter.Adapter4UploadRecyclerView;
 import com.android.sunning.riskpatrol.custom.ActionSheet;
 import com.android.sunning.riskpatrol.custom.crop.Crop;

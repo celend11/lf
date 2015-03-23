@@ -2,7 +2,7 @@ package com.android.sunning.riskpatrol.custom.dialog;
 
 import android.content.Context;
 import android.widget.EditText;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 
 
 public class EditTextDialog extends BaseDialog {

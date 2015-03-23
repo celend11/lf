@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.entity.E_AreaPatrolItems;
 import com.android.sunning.riskpatrol.entity.generate.Area;
 import com.android.sunning.riskpatrol.entity.generate.JianChaXiangMu;

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.entity.EUploadImgList;
 import com.lidroid.xutils.BitmapUtils;
 

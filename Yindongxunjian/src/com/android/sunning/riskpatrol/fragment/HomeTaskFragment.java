@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.activity.CreateCheckPointActivity;
 import com.android.sunning.riskpatrol.activity.CreateProperCheckPointActivity;
 import com.android.sunning.riskpatrol.activity.MainActivity;

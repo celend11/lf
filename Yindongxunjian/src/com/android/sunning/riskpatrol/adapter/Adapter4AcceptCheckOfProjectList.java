@@ -2,7 +2,7 @@ package com.android.sunning.riskpatrol.adapter;
 
 import android.content.Context;
 import android.widget.ImageView;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.entity.generate.login.Site;
 
 import java.util.List;

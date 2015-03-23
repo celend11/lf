@@ -2,7 +2,7 @@ package com.android.sunning.riskpatrol.activity;
 
 import android.os.Bundle;
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.db.DBHelper;
 import com.android.sunning.riskpatrol.entity.BaseEntity;
 import com.android.sunning.riskpatrol.entity.generate.RiskElements;

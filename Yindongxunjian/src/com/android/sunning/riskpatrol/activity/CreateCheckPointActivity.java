@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.custom.dialog.BaseDialog;
 import com.android.sunning.riskpatrol.custom.dialog.DateDialog;
 import com.android.sunning.riskpatrol.custom.dialog.EditTextDialog;

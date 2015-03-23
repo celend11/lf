@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">RiskPatrol</string>
+    <string name="navigation_home">主页</string>
+    <string name="navigation_total">我的汇总</string>
+    <string name="navigation_setup">配置</string>
 
-    <string name="app_name">Yindongxunjian</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="back_description">返回箭头图片</string>
+    <string name="back">返回</string>
+    <string name="check_day">日常检查</string>
+    <string name="check_week">周检查</string>
+    <string name="check_month">月检查</string>
+    <string name="check_devote">专项检查</string>
+    <string name="check_group">集团检查</string>
+    <string name="week_month_collect">本月汇总</string>
+
+
+    <string name="crop__done">完成</string>
+    <string name="crop__cancel" tools:ignore="ButtonCase">取消</string>
+    <string name="crop__saving">保存…</string>
+    <string name="crop__wait">请稍等…</string>
+    <string name="crop__pick_error">No image sources available</string>
+    <string name="progress_text">加载中...</string>
 
 </resources>

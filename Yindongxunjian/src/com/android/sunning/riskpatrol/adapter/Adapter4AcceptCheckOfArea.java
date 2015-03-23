@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.entity.E_AcceptCheckArea;
 import com.android.sunning.riskpatrol.entity.E_AcceptCheckLeader;
 import com.android.sunning.riskpatrol.entity.generate.Area;

@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.db.DBHelper;
 import com.android.sunning.riskpatrol.entity.generate.login.Login;
 import com.android.sunning.riskpatrol.fragment.HomeHistoryFragment;

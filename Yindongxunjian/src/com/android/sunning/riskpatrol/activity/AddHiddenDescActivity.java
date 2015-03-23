@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.adapter.Adapter4AcceptCheckOfHidden;
 import com.android.sunning.riskpatrol.adapter.CommonAdapter;
 import com.android.sunning.riskpatrol.entity.BaseEntity;

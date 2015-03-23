@@ -3,7 +3,7 @@ package com.android.sunning.riskpatrol.adapter;
 import android.content.Context;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.entity.generate.RiskElement;
 
 import java.util.ArrayList;

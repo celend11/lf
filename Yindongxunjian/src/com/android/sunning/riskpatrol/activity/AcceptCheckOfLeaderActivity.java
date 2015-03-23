@@ -1,11 +1,12 @@
 package com.android.sunning.riskpatrol.activity;
 
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
 import com.android.sunning.riskpatrol.adapter.Adapter4AcceptCheckOfLeader;
 import com.android.sunning.riskpatrol.adapter.CommonAdapter;
 import com.android.sunning.riskpatrol.entity.BaseEntity;
@@ -15,9 +16,7 @@ import com.android.sunning.riskpatrol.entity.generate.JianChaFuZeRenC;
 import com.android.sunning.riskpatrol.net.HttpInteraction;
 import com.android.sunning.riskpatrol.net.RequestInfo;
 import com.android.sunning.riskpatrol.util.Utils;
-import com.lidroid.xutils.util.LogUtils;
-
-import java.util.Stack;
+import com.example.yindongxunjian.R;
 
 /**
  * Created by sunning on 15/2/13.

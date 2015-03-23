@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.RiskPatrolApplication;
 import com.android.sunning.riskpatrol.custom.dialog.ProgressBarDialog;
 import com.android.sunning.riskpatrol.db.DBHelper;

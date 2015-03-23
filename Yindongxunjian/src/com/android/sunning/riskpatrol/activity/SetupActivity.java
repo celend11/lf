@@ -8,7 +8,7 @@ import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.ToggleButton;
 
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 
 /**
  * Created by sunning on 15/2/8.

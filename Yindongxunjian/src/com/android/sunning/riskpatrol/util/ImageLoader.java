@@ -3,7 +3,7 @@ package com.android.sunning.riskpatrol.util;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.ImageView;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;

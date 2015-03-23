@@ -18,7 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.RiskPatrolApplication;
 import com.lidroid.xutils.util.LogUtils;
 //是一个ActivityGroup类，为了实现下导航所以其他的界面都是放入framelayout的里面的fragment

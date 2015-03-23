@@ -5,8 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.CompoundButton;
-
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
  
 public class Swicthbutton extends CompoundButton {
  

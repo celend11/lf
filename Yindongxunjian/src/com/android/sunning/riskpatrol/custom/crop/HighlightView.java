@@ -23,7 +23,7 @@ import android.graphics.*;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 
 /*
  * Modified from version in AOSP.

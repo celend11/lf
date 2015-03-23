@@ -2,7 +2,7 @@ package com.android.sunning.riskpatrol.adapter;
 
 import android.content.Context;
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.R;
+import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.entity.E_MyCollect;
 
 import java.util.List;
