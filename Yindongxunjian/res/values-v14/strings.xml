@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_activity_titleBar">登录</string>
+    <string name="authentication_notice">
+        为了净化专业论坛环境，提升个人品牌形象，欢迎认证身份信息，获取粉丝关注。\n认证通过后，姓名单位将默认显示，且无法修改。如确有单位变动，请邮件告知管理员\n修改:AAA@AAA.COM
+    </string>
+    <string name="start_authentication">提交认证</string>
+    <string name="modify_save">保存</string>
+    <string name="about">关于</string>
+    <string name="check_version">版本检查</string>
+    <string name="common_setup">通用设置</string>
+    <string name="logout">退出登录</string>
+    <string name="system_setup">系统设置</string>
+    <string name="feedback_content">请输入您的意见，我们会尽快回复您。</string>
+    <string name="check_new_version">检查新版本</string>
+</resources>

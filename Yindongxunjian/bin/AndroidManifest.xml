@@ -18,10 +18,10 @@
    <application
             android:label="@string/app_name"
             android:icon="@drawable/ic_launcher"
-            android:name=".RiskPatrolApplication"
+            android:name="com.android.sunning.riskpatrol.RiskPatrolApplication"
             android:theme="@style/AppTheme"
             >
-        <activity android:name=".activity.SplashActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.SplashActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -30,96 +30,96 @@
         </activity>
 
         <!--主页-->
-        <activity android:name=".activity.MainActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.MainActivity"
                   android:launchMode="singleTop"
                   android:screenOrientation="portrait">
         </activity>
         <!--首页-->
-        <activity android:name=".activity.HomeActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.HomeActivity"
                   android:screenOrientation="portrait">
         </activity>
 
         <!--我的汇总-->
-        <activity android:name=".activity.MyCollectActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.MyCollectActivity"
                   android:screenOrientation="portrait">
         </activity>
 
         <!--配置-->
-        <activity android:name=".activity.SetupActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.SetupActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--登录-->
-        <activity android:name=".activity.LoginActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.LoginActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--创建检查单-->
-        <activity android:name=".activity.CreateCheckPointActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.CreateCheckPointActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--受检负责人-->
-        <activity android:name=".activity.AcceptCheckOfLeaderActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.AcceptCheckOfLeaderActivity"
                   android:screenOrientation="portrait">
         </activity>
 
         <!--受检项目-->
-        <activity android:name=".activity.AcceptCheckOfProjectActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.AcceptCheckOfProjectActivity"
                   android:screenOrientation="portrait">
         </activity>
 
         <!--受检区域-->
-        <activity android:name=".activity.AcceptCheckOfAreaActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.AcceptCheckOfAreaActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--受检结果录入-->
-        <activity android:name=".activity.CheckResultActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.CheckResultActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--添加隐患说明-->
-        <activity android:name=".activity.AddHiddenDescActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.AddHiddenDescActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--检查结果详情填写-->
-        <activity android:name=".activity.CheckResultDetailActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.CheckResultDetailActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--添加检查项-->
-        <activity android:name=".activity.AddCheckProjectActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.AddCheckProjectActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--创建专项检查单-->
-        <activity android:name=".activity.CreateProperCheckPointActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.CreateProperCheckPointActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--查看检查单-->
-        <activity android:name=".activity.ShowCheckDocumentActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.ShowCheckDocumentActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--查看结果详情-->
-        <activity android:name=".activity.ShowCheckResultDetailActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.ShowCheckResultDetailActivity"
                   android:screenOrientation="portrait">
         </activity>
 
         <!--我的汇总列表页-->
-        <activity android:name=".activity.MyCollectListActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.MyCollectListActivity"
                   android:screenOrientation="portrait">
         </activity>
 
         <!--受检项目列表形式-->
-        <activity android:name=".activity.AcceptCheckOfProjectListActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.AcceptCheckOfProjectListActivity"
                   android:screenOrientation="portrait">
         </activity>
 
 
         <!--图片剪裁-->
-        <activity android:name=".activity.CropActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.CropActivity"
                   android:screenOrientation="portrait">
         </activity>
         <!--图片剪裁-->
-        <activity android:name=".activity.CropImageActivity"
+        <activity android:name="com.android.sunning.riskpatrol.activity.CropImageActivity"
                   android:screenOrientation="portrait">
         </activity>
 
-        <service android:name=".service.AutoSaveService"/>
+        <service android:name="com.android.sunning.riskpatrol.service.AutoSaveService"/>
 
     </application>
 

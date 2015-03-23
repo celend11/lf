@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="category_second_textcolor">#333333</color>
+    <color name="secondcategory_choosed">#0083CE</color>
+    <color name="category_third_textcolor">#5E5E5E</color>
+    <color name="type_keywords_btn_color">#8b8b8b</color>
+    <color name="consulting_pharmacist_bg">#0099F1</color>
+    <color name="product_cart_bg">#e6f3f3f3</color>
+    <color name="product_cart_button_bg">#E72419</color>
+    <color name="market_price_textcolor">#ABABAB</color>
+    
+    <color name="tuan_bg">#ff6b53</color>
+    <color name="jian_bg">#9ed946</color>
+    <color name="zeng_bg">#ff9853</color>
+    <color name="hui_bg">#ffc939</color>
+    <color name="white">#FFFFFF</color>
+    <color name="add_car_noenable">#CDCDCD</color>
+    <color name="index_keyword_border">#E0E0E0</color>
+    <color name="index_keyword_textcolor">#5E5E5E</color>
+    <color name="dark_gray">#5E5E5E</color>
+    <color name="price_color">#E72418</color>
+    <color name="series_name">#5F5F5F</color>
+    <color name="series_choose_property">#333333</color>
+    <color name="gray">#cccccc</color>
+    
+    <color name="home_food_text">#c92f00</color>
+    <color name="home_goods_text">#536403</color>
+    <color name="home_digi_text">#073c64</color>
+    <color name="login_background">#f0f0f0</color>
+    <color name="order_labal">#333333</color>
+    <color name="order_line">#bbb</color>
+    <color name="groupon_gray_disable_color">#999999</color>
+    <color name="transparent">#00000000</color>
+    <color name="alph_gray">#22cccccc</color>
+    <color name="red">#c00</color>
+    <color name="type_child_dark">#eae9e7</color>
+    <color name="type_child_light">#e3e2de</color>
+    <color name="groupon_gray_bg_color">#eeeeee</color>
+    <color name="cart_gray">#f0f0f0</color>
+    <drawable name="cart_pop_up">#303030</drawable>
+    <drawable name="cart_pop_down">#fbc116</drawable>
+    <color name="product_favorited">#DDDDDD</color>
+
+    <color name="button_down_bg">#F3F3F3</color>
+    <color name="common_title_button_down_bg">#0083ce</color>
+    <color name="line_color">#e6e6e6</color>
+    <color name="groupon_blue_text_color">#395585</color>
+    <color name="order_value">#666666</color>
+    <color name="order_choose">#734d01</color>
+    <color name="order_sum_price_value">#a72024</color>
+    <color name="groupon_gray_text_color">#666666</color>
+    <color name="invoice_background">#f0f0f0</color>
+    <color name="update_red">#cc0000</color>
+    <color name="promotion_bg">#ffffff</color>
+    <color name="promotion_item_bg">#FFFCCC</color>
+    <color name="cart_bottom_bar_bg">#e6f3f3f3</color>
+    <color name="cart_submit_unpress">#e72419</color>
+    <color name="cart_submit_press">#b91d14</color>
+    <color name="cart_item_out_stock">#f7f7f7</color>
+    <color name="cart_price_text">#e52518</color>
+    <color name="cart_dialog_confirm_btn_unpress">#ffaa00</color>
+    <color name="cart_dialog_confirm_btn_press">#CC8800</color>
+    <color name="cart_dialog_cancel_btn_unpress">#cccccc</color>
+    <color name="cart_dialog_cancel_btn_press">#8F8F8F</color>
+    <color name="myyiwang_bgk">#ff4cb3ee</color>
+    <color name="myyiwang_bgk_click">#ff8dcff5</color>
+    <color name="common_bgk_color">#fff8f8f8</color>
+    <color name="common_text_color">#ff5e5e5e</color>
+    <color name="finish_text_color">#0093e7</color>
+
+    <color name="recommend_bar_bg">#e8f9ff</color>
+    <color name="recommend_bar_text">#0083ca</color>
+
+    <color name="common_hint_color">#ffaaaaaa</color>
+
+    <color name="search_bg">#f4f3f2</color>
+    <color name="dialog_title_text_color">#ff158bd4</color>
+    <color name="dialog_content_text_color">#ff333333</color>
+    
+    <color name="title_bgcolor">#0193E8</color>
+    <color name="bottom_bgcolor">#e1F3F3F3</color>
+    <color name="bottom_linecolor">#e6e6e6</color>
+    <color name="black">#000000</color>
+    <color name="category_third_bg">#EEEEEE</color>
+    <color name="navigation_normal">#7b7b7b</color>
+    <color name="navigation_press">#00B2EE</color>
+    <color name="result_image_border">#ffffffff</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="viewfinder_mask">#bb25353e</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_frame">#bb466e87</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="viewfinder_corner">#ffffffff</color>
+    <color name="money_red">#e72419</color>
+    <color name="gift_color">#cc0000</color>
+    <color name="ver_code_change">#0066cc</color>
+    <color name="trans_red">#CCEE1D1D</color>
+    <color name="trans_gray">#99654700</color>
+    <color name="my_store_text_color">#CD0000</color>
+    
+    <color name="series_property_type_color">#5E5E5E</color>
+
+    <color name="gallery_alpha_color">#4d333333</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    
+    
+    <color name="myyiwang_lib_bgk">#ff4cb3ee</color>
+
+    <color name="homepage_bg_color">#F8F8F8</color>
+    <color name="index_cms_textcolor">#999999</color>
+    <color name="settlement_bg_color">#f3f3f3</color>
+    <color name="settlement_money_bg_color">#fffccc</color>
+    <color name="settlement_normal_text_color">#333333</color>
+    <color name="settlement_notice_text_color">#0083ce</color>
+    <color name="settlement_title_text_color">#a5a5a5</color>
+    <color name="settlement_money_title_color">#5e5e5e</color>
+    <color name="settlement_divider_color">#e5e5e5</color>
+    
+    
+    <color name="yellow_btn">#FFA600</color>
+    <color name="orange_btn">#ff8c00</color>
+
+
+    <color name="regist_bg_color">#efefef</color>
+    <color name="regist_edittext_color">#5e5e5e</color>
+    <color name="regist_waitCaptchaPhone_bg_color">#dddddd</color>
+    <color name="regist_waitCaptchaPhone_text_color">#9f9fa0</color>
+    <color name="regist_bluetext">#0093e7</color>
+    <color name="regist_blue_pressed_text">#0067A2</color>
+    <color name="regist_greentext">#84bb20</color>
+    <color name="regist_gray">#b3b3b3</color>
+    <color name="regist_gray2">#bfbfbf</color>
+    <color name="transparent_dark_bg">#88aaaaaa</color>
+    
+
+
+
+    <color name="holo_blue_light">#ff33b5e5</color>
+
+    <color name="new_product_gray_text_cl">#ffb6b6b6</color>
+    <color name="new_product_item_text_cl">#ff333333</color>
+
+    <color name="new_product_bgk">#ffF0F0F0</color>
+
+    <color name="home_text_color">#ff5e5e5e</color>
+    <color name="home_price_text_color">#ffe72417</color>
+
+
+
+    <color name="text_color">#5e5e5e</color>
+    <color name="list_view_item_press">#ffe0e0e0</color>
+
+    <!-- 纯黑色 -->
+    <drawable name="black">#000000</drawable>
+    <!-- 纯白色 -->
+    <drawable name="white">#ffffff</drawable>
+    <!-- 浅灰色 -->
+    <drawable name="qgrey">#e6e6e6</drawable>
+    <!-- 浅黑色 -->
+    <drawable name="qblack">#5e5e5e</drawable>
+    <!-- 背景灰色 -->
+    <drawable name="gray">#F8F8F8</drawable>
+    <!-- 背景蓝色 -->
+    <drawable name="blue">#0099F1</drawable>
+    <!-- 字体灰色 -->
+    <drawable name="fontgray">#a5a5a5</drawable>
+    <!-- 字体桔黄 -->
+    <drawable name="fontyellow">#FFBB3D</drawable>
+    <!-- 字体桔黄 -->
+    <drawable name="hintgray">#CDCDCD</drawable>
+    <drawable name="words_gray">#999999</drawable>
+    <drawable name="time_gray">#cccc99</drawable>
+    <!-- 输入框提示字体颜色 -->
+    <drawable name="edit_hint">#CCCCCC</drawable>
+    <color name="half_transparent">#aeaeae</color>
+    <!-- 科室按钮效果 -->
+    <drawable name="ks_down">#EAF9FF</drawable>
+    <!-- 线条灰色 -->
+    <drawable name="divider_gary">#e6e6e6</drawable>
+    <drawable name="font_dark_gary">#5e5e5e</drawable>
+    <!-- 浅绿色 -->
+    <color name="light_green">#96d43a</color>
+    <!-- 橘黄色 -->
+    <color name="orange">#ffaa00</color>
+    <!-- 返回按钮按下颜色 -->
+    <color name="back_press">#80CCF8</color>
+    <color name="blue_press">#EAF9FF</color>
+    <color name="bottom_gray">#eeeeee</color>
+    <!-- 首页更多按钮 -->
+    <drawable name="more_press">#007bc2</drawable>
+    <drawable name="popwindow">#008ee0</drawable>
+
+    <color name="common_color">#FF1A9BEE</color>
+    <color name="trans_common_backgroup_color">#88EAEAEA</color>
+    <color name="common_background_color">#FFEAEAEA</color>
+    <color name="common_item_backgroup_color">#FFA3A3A3</color>
+    <color name="common_item_line_backgroup_color">#FFECECEC</color>
+    <color name="btn_unsele_bg">#FF0099F1</color>
+    <color name="transparent_text_bgk_color">#99666666</color>
+    <color name="upload_btn_color">#FFBBBBBB</color>
+    <color name="btn_bgk_click">#ff8dcff5</color>
+    <color name="right_btn_color">#FF4CB6F2</color>
+    <color name="shade_black">#99000000</color>
+
+
+    <color name="body_text_1">#ff000000</color>
+    <color name="body_text_2">#99000000</color>
+    <color name="body_text_disabled">#66000000</color>
+    <color name="body_text_1_inverse">#ffffffff</color>
+    <color name="body_text_2_inverse">#99ffffff</color>
+    <color name="accent_1">#ff29549f</color>
+    <color name="hyperlink">#ffff549f</color>
+    <color name="background_1">#ffffffff</color>
+    <color name="whats_on_separator">#4d000000</color>
+    <color name="all_track_color">#ff222222</color>
+    <color name="block_column_1">#ff0fabff</color>
+    <color name="block_column_2">#ffdf1831</color>
+    <color name="block_column_3">#ff009939</color>
+
+
+    <!--start-->
+    <color name="hint_text_color">#ffe6e6e6</color>
+    <color name="verify_btn_color">#ff1fc37c</color>
+    <color name="common_btn_color">#ff00c47a</color>
+    <color name="common_btn_color_press">#ff00a567</color>
+    <color name="title_bar_color">#ff147cc2</color>
+    <color name="login_btn_color">#ff00669a</color>
+    <color name="login_btn_color_press">#FF004e7e</color>
+    <color name="main_bgk_color">#fff5f5f5</color>
+    <color name="grey_text_color">#ffc0c0c0</color>
+
+    <color name="common_text_color_tint">#FF333333</color>
+    <color name="common_text_color_dark">#FF999999</color>
+    <color name="common_text_color_blue">#FF0d80b5</color>
+    <color name="announcement_color">#fffeb454</color>
+    <color name="announcement_font_color">#7394a8</color>
+    <color name="slidingMenu_list_color">#66666666</color>
+    <color name="slidingMenu_list_background">#ff444547</color>
+    <color name="title_back_press_background">#99FFFFFF</color>
+
+
+
+    <color name="crop__button_bar">#f3f3f3</color>
+    <color name="crop__button_text">#666666</color>
+    <color name="crop__selector_pressed">#1a000000</color>
+    <color name="crop__selector_focused">#77000000</color>
+    <color name="highlight">#f3f3f3</color>
+    <color name="download_progressbar_bg">#4c000000</color>
+
+    <color name="font_attribute">#ff000000</color>
+    <color name="font_value">#ff888271</color>
+    <color name="font_undercard">#ff8e7e68</color>
+    <color name="font_highlight">#fff4a900</color>
+    <color name="font_empty">#ffd2cec1</color>
+    <color name="link_color">#ff4abad7</color>
+    <color name="timestampline">#ffe5e1de</color>
+    <color name="msg_status_sent">#ffeb7837</color>
+    <color name="msg_status_sending">#ff50a5c3</color>
+    <color name="msg_status_read">#ff82c85f</color>
+    <color name="msg_status_failed">#ffe64646</color>
+    <color name="msg_status_new">#fffff2cc</color>
+    <color name="msg_status_new_stroke">#ffff9b2f</color>
+    <color name="msg_status_new_text">#ffc0711b</color>
+    <color name="msg_editor_backgroud">#ffececec</color>
+    <color name="msg_photo_border">#ffd1d1d1</color>
+    <color name="msg_plus_item_press">#ff1d1d1d</color>
+    <color name="msg_emotebar_backgroud">#ff73797d</color>
+    <color name="msg_emotebar_item_press">#ff3b3e40</color>
+    <color name="msg_emotebar_item_selected">#ffececec</color>
+    <color name="msg_emote_divider">#ffa1a1a1</color>
+    <color name="msg_short_line_normal">#ffafafaf</color>
+    <color name="msg_short_line_selected">#ff5cbde3</color>
+
+
+    <color name="sb__snack_bkgnd">#323232</color>
+    <color name="sb__transparent">#00000000</color>
+    <color name="sb__dim_white">#20FFFFFF</color>
+    <color name="sb__button_text_color">#FB6541</color>
+
+
+
+
+    <color name="blue_bgk_color">#FF9EDAEB</color>
+    <color name="unselected_bgk_color">#FFc9c9c9</color>
+    <color name="blue_bgk_text_color">#ff07afea</color>
+    <color name="bottom_tab_line_color">#ffb8bab8</color>
+    <color name="main_text_color">#ff727272</color>
+    <color name="blue_tab_bgk">#ffb7f7ff</color>
+    <color name="history">#fff5f8f6</color>
+
+    <color name="holo_blue_dark">#ff0099cc</color>
+
+
+
+</resources>
