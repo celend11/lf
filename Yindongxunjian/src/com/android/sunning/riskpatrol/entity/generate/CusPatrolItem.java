@@ -1,10 +1,11 @@
 
 package com.android.sunning.riskpatrol.entity.generate;
 
-import com.google.gson.annotations.Expose;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import com.google.gson.annotations.Expose;
 
 public class CusPatrolItem {
 
@@ -21,7 +22,7 @@ public class CusPatrolItem {
     @Expose
     private Object Attachements;
     @Expose
-    private Object ProblemItems;
+    private RiskElements ProblemItems;
 
     /**
      * 
@@ -136,7 +137,7 @@ public class CusPatrolItem {
      * @return
      *     The ProblemItems
      */
-    public Object getProblemItems() {
+    public RiskElements getProblemItems() {
         return ProblemItems;
     }
 
@@ -145,7 +146,7 @@ public class CusPatrolItem {
      * @param ProblemItems
      *     The ProblemItems
      */
-    public void setProblemItems(Object ProblemItems) {
+    public void setProblemItems(RiskElements ProblemItems) {
         this.ProblemItems = ProblemItems;
     }
 

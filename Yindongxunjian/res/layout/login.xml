@@ -40,6 +40,7 @@
                     android:gravity="center_vertical"
                     android:hint="请输入用户名"
                     android:textSize="15sp"
+                    android:maxLength="8"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/common_text_color"
                     android:textColorHint="@color/common_hint_color"/>
@@ -82,7 +83,7 @@
                 android:layout_marginLeft="@dimen/dp30"
                 android:layout_height="wrap_content">
             <CheckBox
-                	android:id="@+id/savepass"
+                	android:id="@+id/record_pass"
                     android:background="@color/transparent"
                     android:layout_width="@dimen/dp40"
                     android:button="@drawable/check_box_selector"
@@ -112,7 +113,7 @@
                 android:layout_height="@dimen/dp55"/>
 
 
-		
+
     </LinearLayout>
 
     <View

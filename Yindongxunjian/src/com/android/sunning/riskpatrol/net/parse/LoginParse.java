@@ -1,13 +1,14 @@
 package com.android.sunning.riskpatrol.net.parse;
 
-import com.android.sunning.riskpatrol.entity.BaseEntity;
-import com.android.sunning.riskpatrol.entity.generate.login.Login;
-import com.android.sunning.riskpatrol.entity.generate.login.Site;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.android.sunning.riskpatrol.entity.BaseEntity;
+import com.android.sunning.riskpatrol.entity.generate.login.Login;
+import com.android.sunning.riskpatrol.entity.generate.login.Site;
 
 /**
  * Created by sunning on 15/2/16.

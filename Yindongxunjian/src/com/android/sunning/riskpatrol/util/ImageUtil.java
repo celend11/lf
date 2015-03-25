@@ -3,7 +3,6 @@ package com.android.sunning.riskpatrol.util;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -26,6 +25,7 @@ import android.os.Build;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
+
 import com.android.sunning.riskpatrol.Const;
 
 /**
@@ -259,8 +259,7 @@ public class ImageUtil {
 	/**
 	 * 创建压缩图
 	 */
-	public static String generateCompressedPicture(Context context,
-			String oldPath) {
+	public static String generateCompressedPicture(Context context,String oldPath) {
 		String path = newPicturePath();
 		BitmapScale.decodeBitmapForPic(context, oldPath, path);
 		return path;

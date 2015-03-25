@@ -20,12 +20,12 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
-    <CheckBox
+    <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:src="@drawable/inner_ck_unselect"
             android:id="@+id/accept_check_aera_ck"
-            style="@style/CustomCheckboxTheme"
             android:layout_marginRight="@dimen/dp10"
             />
 

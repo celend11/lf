@@ -19,10 +19,18 @@ package com.android.sunning.riskpatrol.custom.crop;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.*;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Region;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
+
 import com.example.yindongxunjian.R;
 
 /*

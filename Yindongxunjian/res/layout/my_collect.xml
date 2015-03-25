@@ -7,7 +7,21 @@
 
     <include layout="@layout/common_title"/>
 
-    <include layout="@layout/current_user"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/blue_tab_bgk"
+            android:layout_height="@dimen/dp55">
+        <TextView
+                android:text="当月汇总"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dp10"
+                style="@style/editTextStyle"
+                android:textColor="@color/blue_bgk_text_color"
+                android:layout_height="match_parent"/>
+    </LinearLayout>
+
 
     <ListView
             style="@style/commonListViewStyle"

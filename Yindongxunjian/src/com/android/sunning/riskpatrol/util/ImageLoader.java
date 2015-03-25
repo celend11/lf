@@ -1,18 +1,19 @@
 package com.android.sunning.riskpatrol.util;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
 import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.ImageView;
+
 import com.example.yindongxunjian.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
 
 public class ImageLoader {
 

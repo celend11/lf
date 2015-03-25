@@ -1,9 +1,15 @@
 package com.android.sunning.riskpatrol.net;
 
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.os.Message;
 import android.text.TextUtils;
+
 import com.android.sunning.riskpatrol.Const;
-import com.android.sunning.riskpatrol.entity.BaseEntity;
 import com.android.sunning.riskpatrol.exception.BException;
 import com.android.sunning.riskpatrol.system.HandlerManager;
 import com.lidroid.xutils.HttpUtils;
@@ -14,11 +20,6 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.util.LogUtils;
-import org.apache.http.NameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.List;
 
 
 /**
@@ -39,18 +40,11 @@ public final class HttpManager {
      * @param handler
      */
     public static void request(final RequestParams params , final HandlerManager.SunnyHandler handler , String apiName) {
-        if(params != null){
-            sing(params) ;
-        }
-        
-        String reqParams = getParams(params,apiName) ;
-//        LogUtils.e(reqParams+"") ;
-        //     向服务器发送数据请求，发送数据params，接收数据ResponseInfo<String> stringResponseInfo
-        HTTP_UTILS.send(HttpRequest.HttpMethod.POST, Const.URL, params, new RequestCallBack<String>() {
+        HTTP_UTILS.send(HttpRequest.HttpMethod.POST, Const.URL + apiName, params, new RequestCallBack<String>() {
             Message msg = handler.obtainMessage() ;
             @Override
             public void onSuccess(ResponseInfo<String> stringResponseInfo) {
-                LogUtils.e(params.getQueryStringParams().get(0).getValue()+ "==="+stringResponseInfo.result) ;
+                LogUtils.e(stringResponseInfo.result) ;
                 msg.what = Const.SUCCESS ;
                 msg.obj = stringResponseInfo ;
                 handler.sendMessage(msg) ;
@@ -88,6 +82,10 @@ public final class HttpManager {
             }
             @Override
             public void onFailure(HttpException httpException, String arg1) {
+                msg.what = Const.FAIL ;
+                BException sunnyException = new BException(httpException.getMessage() , httpException.getExceptionCode()) ;
+                msg.obj = sunnyException ;
+                handler.sendMessage(msg) ;
             }
         }) ;
     }
@@ -110,15 +108,13 @@ public final class HttpManager {
         httpHandler =  HTTP_UTILS.send(HttpRequest.HttpMethod.POST , Const.URL + Const.InterfaceName.UPLOAD_ATTACH , params , new RequestCallBack<Object>() {
             @Override
             public void onSuccess(ResponseInfo<Object> objectResponseInfo) {
-                BaseEntity baseEntity = new BaseEntity() ;
                 Message msg = handler.obtainMessage() ;
                 if(objectResponseInfo != null && objectResponseInfo.result != null){
                     try {
                         JSONObject json = new JSONObject(objectResponseInfo.result.toString()) ;
-                        baseEntity.code = json.optInt("statusCode") ;
-                        baseEntity.message = json.optString("message") ;
+                        boolean isSuccess = json.optBoolean("success",false) ;
                         msg.obj = objectResponseInfo.result.toString() ;
-                        if(baseEntity.code == Const.SUCCESS){
+                        if(isSuccess) {
                             msg.what = Const.UPLOAD_SUCCESS ;
                         }else{
                             msg.what = Const.UPLOAD_FAIL ;

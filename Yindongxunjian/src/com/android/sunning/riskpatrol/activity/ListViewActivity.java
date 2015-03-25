@@ -1,15 +1,14 @@
 package com.android.sunning.riskpatrol.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import com.example.yindongxunjian.R;
-import com.android.sunning.riskpatrol.adapter.CommonAdapter;
-import com.lidroid.xutils.util.LogUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.android.sunning.riskpatrol.adapter.CommonAdapter;
 
 /**
  * Created by sunning on 15/2/13.
@@ -44,10 +43,12 @@ public abstract class ListViewActivity<T> extends BaseActivity implements Adapte
         }
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-    }
+   @Override
+   public void onItemClick(AdapterView<?> parent, View view, int position,
+		long id) {
+	// TODO Auto-generated method stub
+	
+   }
 
     protected abstract CommonAdapter getAdapter() ;
 }

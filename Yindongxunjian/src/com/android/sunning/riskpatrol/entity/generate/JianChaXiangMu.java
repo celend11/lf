@@ -3,10 +3,12 @@ package com.android.sunning.riskpatrol.entity.generate;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.google.gson.annotations.Expose;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import com.google.gson.annotations.Expose;
 
 public class JianChaXiangMu {
 

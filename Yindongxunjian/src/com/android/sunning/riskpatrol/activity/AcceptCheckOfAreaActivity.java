@@ -1,11 +1,12 @@
 package com.android.sunning.riskpatrol.activity;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CheckBox;
 
 import com.android.sunning.riskpatrol.Const;
 import com.android.sunning.riskpatrol.adapter.Adapter4AcceptCheckOfArea;
@@ -13,6 +14,7 @@ import com.android.sunning.riskpatrol.adapter.CommonAdapter;
 import com.android.sunning.riskpatrol.entity.BaseEntity;
 import com.android.sunning.riskpatrol.entity.generate.Area;
 import com.android.sunning.riskpatrol.entity.generate.Areas;
+import com.android.sunning.riskpatrol.entity.generate.CusPatrolItem;
 import com.android.sunning.riskpatrol.entity.generate.JianChaXiangMu;
 import com.android.sunning.riskpatrol.net.HttpInteraction;
 import com.android.sunning.riskpatrol.net.RequestInfo;
@@ -26,7 +28,7 @@ import com.example.yindongxunjian.R;
 public class AcceptCheckOfAreaActivity extends ListViewActivity<Area>{
 
     private Adapter4AcceptCheckOfArea adapter ;
-
+    private String areaName;
     @Override
     protected CommonAdapter getAdapter() {
         adapter = new Adapter4AcceptCheckOfArea(this , dataForAdapter , R.layout.accept_check_area_item) ;
@@ -55,11 +57,20 @@ public class AcceptCheckOfAreaActivity extends ListViewActivity<Area>{
                 CreateCheckPointActivity createCheckPointActivity = (CreateCheckPointActivity) application.getSession().get(Const.KEY.CURRENT_CHECK_POINT) ;
                 if(createCheckPointActivity != null){
                     JianChaXiangMu jianChaXiangMu = new JianChaXiangMu() ;
+                    List<Area> areas1 = areas.getAreas() ;
+                    for(Area area : areas1){
+                        List<CusPatrolItem> list = new ArrayList<CusPatrolItem>() ;
+                        CusPatrolItem c = new CusPatrolItem() ;
+                        c.setItemID("00000000-0000-0000-0000-000000000000") ;
+                        c.setItemName("自定义");
+                        list.add(c) ;
+                        area.setCusPatrolItems(list);
+                    }
                     jianChaXiangMu.setAreas(areas.getAreas()) ;
                     createCheckPointActivity.rootDatum.setJianChaXiangMu(jianChaXiangMu) ;
                 }
                 if(areas.getAreas() != null){
-                    dataForAdapter.addAll(areas.getAreas()) ;
+                    dataForAdapter.addAll(areas.getAreas());
                     adapter.notifyDataSetChanged() ;
                 }
             }
@@ -72,7 +83,7 @@ public class AcceptCheckOfAreaActivity extends ListViewActivity<Area>{
                 requestParams.addQueryStringParameter("siteID" , checkPointActivity.rootDatum.getSite().getSiteID()) ;
             }
         } ;
-        requestInfo.execute();
+        requestInfo.execute() ;
     }
 
     @Override
@@ -85,28 +96,33 @@ public class AcceptCheckOfAreaActivity extends ListViewActivity<Area>{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.title_menu_content_btn:
-//                if(adapter.getSelectFlag() != null){
+                if(adapter.getSelectFlag() != -1){
                     CreateCheckPointActivity createCheckPointActivity = (CreateCheckPointActivity) application.getSession().get(Const.KEY.CURRENT_CHECK_POINT) ;
 //                    createCheckPointActivity.currentArea.areaList = dataForAdapter ;
                 Intent intent = new Intent(Const.BroadcastReceiver.ADD_PROJECT) ;
                 sendBroadcast(intent) ;
+                Area area=adapter.getItem(adapter.getSelectFlag());
+                areaName=area.getAreaName();
+                createCheckPointActivity.showarea.setText(areaName);
+                createCheckPointActivity.rootDatum.getJianChaXiangMu().getAreas().get(createCheckPointActivity.i).setAreaName(areaName);
+                createCheckPointActivity.i++;
 //                    createCheckPointActivity.setLeaderName(createCheckPointActivity.currentSelectLeader.leaderName) ;
 //                    application.getSession().remove(Const.KEY.CURRENT_CHECK_POINT) ;
                     performBackPressed() ;
-//                }else{
-//                    toast("请选择受检区域");
-//                }
+                }else{
+                    toast("请选择受检区域");
+                }
                 break;
         }
         super.onClick(v);
     }
-
+    
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position,
+    		long id) {
+    	adapter.setSelect(position) ;
+    	adapter.notifyDataSetChanged();
         super.onItemClick(parent, view, position, id);
-        CheckBox checkBox = (CheckBox) view.findViewById(R.id.accept_check_aera_ck);
-        checkBox.setChecked(!checkBox.isChecked());
-        adapter.notifyDataSetChanged();
     }
 
 

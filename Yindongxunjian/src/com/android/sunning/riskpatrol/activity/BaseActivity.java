@@ -1,5 +1,8 @@
 package com.android.sunning.riskpatrol.activity;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
@@ -10,7 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.yindongxunjian.R;
+
 import com.android.sunning.riskpatrol.RiskPatrolApplication;
 import com.android.sunning.riskpatrol.custom.dialog.ProgressBarDialog;
 import com.android.sunning.riskpatrol.db.DBHelper;
@@ -18,9 +21,7 @@ import com.android.sunning.riskpatrol.system.ActivityStackOrderManager;
 import com.android.sunning.riskpatrol.system.HandlerCallBackListener;
 import com.android.sunning.riskpatrol.system.HandlerManager;
 import com.android.sunning.riskpatrol.util.Utils;
-
-import java.util.Timer;
-import java.util.TimerTask;
+import com.example.yindongxunjian.R;
 
 public abstract class BaseActivity extends FragmentActivity implements View.OnClickListener , HandlerCallBackListener{
 	protected RiskPatrolApplication application;
@@ -29,6 +30,8 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
 	protected HandlerManager.SunnyHandler riHandlerManager;
     protected ActivityStackOrderManager activityStackOrderManager;
     protected DBHelper dbHelper ;
+
+
     private boolean isExit ;
     private TextView titleView ;
     private TextView titleRightView ;
@@ -118,7 +121,6 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
      */
     @SuppressWarnings("deprecation")
     public void performBackPressed() {
-//    	假如是在主页，我的汇总，配置的第一个fragmentactivity时，按back键在两秒内两次才会退出
         String thisKey = ((Object) this).getClass().getSimpleName() ;
         if(Utils.isRadioRootActivity(thisKey)){
             Timer timer = null ;
@@ -151,7 +153,7 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
         }
         else{
             this.finish() ;
-            Intent intent = new Intent(this,MainActivity.class);
+            Intent intent = new Intent(this,HomeActivity.class);
             startActivity(intent);
         }
     }
@@ -159,62 +161,6 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
     protected void backRefresh(){
 
     }
-
-
-//    protected boolean saveSharedPreferences(String key , int value){
-//        SharedPreferences.Editor editor = appInfo.edit();
-//        editor.putInt(key, value) ;
-//        return editor.commit() ;
-//    }
-//    protected boolean saveSharedPreferences(String key , String value){
-//        SharedPreferences.Editor editor = loginInfo.edit();
-//        editor.putString(key, value) ;
-//        return editor.commit() ;
-//    }
-
-//    protected void saveSetupInfo(String key , boolean value){
-//        setupInfo.edit().putBoolean(key,value).commit() ;
-//    }
-//
-//    protected boolean getSetupInfo(String key){
-//        return setupInfo.getBoolean(key,false) ;
-//    }
-//
-//    protected String getAutoLoginParams(String key){
-//        return loginInfo.getString(key, "") ;
-//    }
-//
-//    protected void clearLoginParam(){
-//        loginInfo.edit().clear().commit() ;
-//    }
-//
-//    protected int getSharedPreferences(String key){
-//        return appInfo.getInt(key , -1 ) ;
-//    }
-//
-//
-//    public void showDialog(String content){
-//        dialogUtils.showDialog(content) ;
-//    }
-//
-//    public void showDialog(String content,int btnName , DialogInterface.OnClickListener onClickListener){
-//        dialogUtils.showDialog(content , btnName,onClickListener) ;
-//    }
-//    public void showDialog(String content, DialogInterface.OnClickListener...onClickListener){
-//        dialogUtils.showDialog(content ,onClickListener) ;
-//    }
-//    public void showDialog(String content,DialogInterface.OnClickListener onClickListener){
-//        dialogUtils.showDialog(content ,onClickListener) ;
-//    }
-//
-//    protected void showDialog(String content,int btnName ,int thirdBtnName , DialogInterface.OnClickListener onClickListener,DialogInterface.OnClickListener thirdClickListener){
-//        dialogUtils.showDialog(content , btnName , thirdBtnName , onClickListener , thirdClickListener) ;
-//    }
-//
-//    public void dismissDialog(){
-//        dialogUtils.dismissDialog() ;
-//    }
-//
     public void show(){
         if(loading != null && !loading.isShowing()){
             loading.show() ;
@@ -252,7 +198,7 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
      */
     public void openActivity(Class<?> pClass) {
         openActivity(pClass, null);
-//        overridePendingTransition(R.anim.inner, R.anim.out);
+        overridePendingTransition(R.anim.in_right_to_left,R.anim.roll);
     }
 
     /**
@@ -267,7 +213,7 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
             intent.putExtras(pBundle);
         }
         startActivity(intent);
-        overridePendingTransition(R.anim.inner, R.anim.out);
+        overridePendingTransition(R.anim.in_right_to_left,R.anim.roll);
     }
 
     public void openActivityByResult(Class<?> pClass ,int requestCode , Bundle pBundle){
@@ -283,7 +229,7 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
     public void openActivityByResult(Class<?> pClass ,int requestCode){
         this.openActivityByResult(pClass , requestCode , null);
     }
-    
+
     /**
      * 通过Action启动Activity
      *

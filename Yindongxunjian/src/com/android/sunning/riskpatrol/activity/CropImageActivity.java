@@ -16,9 +16,20 @@
 
 package com.android.sunning.riskpatrol.activity;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.concurrent.CountDownLatch;
+
 import android.annotation.TargetApi;
 import android.content.Intent;
-import android.graphics.*;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapRegionDecoder;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.net.Uri;
 import android.opengl.GLES10;
 import android.os.Build;
@@ -26,13 +37,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.View;
-import com.example.yindongxunjian.R;
-import com.android.sunning.riskpatrol.custom.crop.*;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.concurrent.CountDownLatch;
+import com.android.sunning.riskpatrol.custom.crop.Crop;
+import com.android.sunning.riskpatrol.custom.crop.CropImageView;
+import com.android.sunning.riskpatrol.custom.crop.CropUtil;
+import com.android.sunning.riskpatrol.custom.crop.HighlightView;
+import com.android.sunning.riskpatrol.custom.crop.ImageViewTouchBase;
+import com.android.sunning.riskpatrol.custom.crop.RotateBitmap;
+import com.example.yindongxunjian.R;
 
 /*
  * Modified from original in AOSP.
@@ -343,10 +355,8 @@ public class CropImageActivity extends MonitoredActivity {
                 adjusted.offset(adjusted.left < 0 ? width : 0, adjusted.top < 0 ? height : 0);
                 rect = new Rect((int) adjusted.left, (int) adjusted.top, (int) adjusted.right, (int) adjusted.bottom);
             }
-
             try {
                 croppedImage = decoder.decodeRegion(rect, new BitmapFactory.Options());
-
             } catch (IllegalArgumentException e) {
                 // Rethrow with some extra information
                 throw new IllegalArgumentException("Rectangle " + rect + " is outside of the image ("

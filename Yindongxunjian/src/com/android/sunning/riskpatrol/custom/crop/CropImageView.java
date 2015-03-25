@@ -1,13 +1,14 @@
 package com.android.sunning.riskpatrol.custom.crop;
 
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import com.android.sunning.riskpatrol.activity.CropImageActivity;
 
-import java.util.ArrayList;
+import com.android.sunning.riskpatrol.activity.CropImageActivity;
 
 public class CropImageView extends ImageViewTouchBase {
 

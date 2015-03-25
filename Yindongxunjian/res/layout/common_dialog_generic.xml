@@ -90,6 +90,48 @@
         </LinearLayout>
 
         <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="#D1D1D1" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:id="@+id/dialog_generic_layout_bottom"
+                android:orientation="horizontal" >
+
+            <Button
+                    android:id="@+id/dialog_generic_btn_button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:background="@drawable/left_btn_select"
+                    android:text="确定"
+                    style="@style/textBlueStyleSmall" />
+
+
+            <LinearLayout
+                    android:id="@+id/second_line"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#D1D1D1"
+                    android:orientation="horizontal" />
+
+            <Button
+                    android:id="@+id/dialog_generic_btn_button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/right_btn_select"
+                    android:text="取消"
+                    android:visibility="gone"
+                    style="@style/textBlueStyleSmall" />
+        </LinearLayout>
+
+
+<!--
+        <LinearLayout
             android:id="@+id/dialog_generic_layout_bottom"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -99,35 +141,28 @@
             android:paddingLeft="6dip"
             android:paddingRight="6dip"
             android:paddingTop="0dip"
-            android:visibility="gone" >
+            android:visibility="visible" >
 
             <Button
                 android:id="@+id/dialog_generic_btn_button1"
-                style="@style/Style_Dialog_Button"
+                android:background="@drawable/left_btn_select"
                 android:layout_width="0.0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="Button" 
-                android:visibility="gone"/>
+                android:text="Button"
+                android:visibility="visible"/>
 
             <Button
                 android:id="@+id/dialog_generic_btn_button2"
-                style="@style/Style_Dialog_Button"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" 
-                android:visibility="gone"/>
-
-            <Button
-                android:id="@+id/dialog_generic_btn_button3"
-                style="@style/Style_Dialog_Button"
+                android:background="@drawable/right_btn_select"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Button"
-                android:visibility="gone" />
+                android:visibility="visible"/>
+
         </LinearLayout>
+-->
     </LinearLayout>
 
 </LinearLayout>

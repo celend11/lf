@@ -1,13 +1,14 @@
 package com.android.sunning.riskpatrol.adapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import com.example.yindongxunjian.R;
-import com.android.sunning.riskpatrol.entity.generate.RiskElement;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.android.sunning.riskpatrol.entity.generate.RiskElement;
+import com.example.yindongxunjian.R;
 
 /**
  * Created by sunning on 15/2/26.

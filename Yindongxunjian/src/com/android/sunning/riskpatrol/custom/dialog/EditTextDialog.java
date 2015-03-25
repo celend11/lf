@@ -2,6 +2,7 @@ package com.android.sunning.riskpatrol.custom.dialog;
 
 import android.content.Context;
 import android.widget.EditText;
+
 import com.example.yindongxunjian.R;
 
 
@@ -11,8 +12,8 @@ public class EditTextDialog extends BaseDialog {
 
 	public EditTextDialog(Context context) {
 		super(context);
-		setDialogContentView(R.layout.include_dialog_edittext);
-		mEtEnter = (EditText) findViewById(R.id.dialog_edittext_enter);
+		setDialogContentView(R.layout.include_dialog_edittext) ;
+		mEtEnter = (EditText) findViewById(R.id.dialog_edittext_enter) ;
 	}
 
 	@Override

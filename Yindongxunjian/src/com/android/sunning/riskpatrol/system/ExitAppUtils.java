@@ -1,9 +1,9 @@
 package com.android.sunning.riskpatrol.system;
 
-import android.app.Activity;
-
 import java.util.LinkedList;
 import java.util.List;
+
+import android.app.Activity;
 
 /** 
  * android退出程序的工具类，使用单例模式 

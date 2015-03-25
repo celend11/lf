@@ -18,10 +18,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.RiskPatrolApplication;
+import com.example.yindongxunjian.R;
 import com.lidroid.xutils.util.LogUtils;
-//是一个ActivityGroup类，为了实现下导航所以其他的界面都是放入framelayout的里面的fragment
+
 public class MainActivity extends ActivityGroup {
 
     protected final int GRAY = 0;
@@ -30,12 +30,9 @@ public class MainActivity extends ActivityGroup {
     public static final int BACK = 1;
     private FrameLayout container = null;
     public int currentMenuItemId;
-//    继承与application的一个类
     private RiskPatrolApplication rIApplication;
-//    相当于arraylist与hashmap,但是相比较来说SparseArray执行效率较高一些
     private SparseArray<String> imageMap = new SparseArray<String>();
     //	private ImageView lastView;
-//    是整型的一个封装类，相比于Integer而言，具有线程安全性,Atomic即原子量类，就是指整型里面的最小单位
     private AtomicInteger ai;
     public ImageView lastView;
 
@@ -43,7 +40,7 @@ public class MainActivity extends ActivityGroup {
 
         @Override
         public void onAnimationStart(Animation arg0) {
-            ai.incrementAndGet();// 相当与i++
+            ai.incrementAndGet();
         }
 
         @Override
@@ -53,10 +50,10 @@ public class MainActivity extends ActivityGroup {
 
         @Override
         public void onAnimationEnd(Animation arg0) {
-            ai.decrementAndGet();// 相当与i--
+            ai.decrementAndGet();
         }
     };
-  
+
     private void initImageMap() {
         imageMap.put(R.id.radio_one, R.drawable.tab_home + "," + R.drawable.tab_home_press);
         imageMap.put(R.id.radio_two, R.drawable.tab_my_collect + "," + R.drawable.tab_my_collect_press);
@@ -65,7 +62,6 @@ public class MainActivity extends ActivityGroup {
 
     /**
      * Called when the activity is first created.
-     * 当activity第一次被创建是调用
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,17 +76,13 @@ public class MainActivity extends ActivityGroup {
         rIApplication.getSession().put(RiskPatrolApplication.MAIN_ACTIVITY, this);
         startActivityById(HomeActivity.class.getName(), null);
     }
-    /**
-     * 在SparseArray<String> 中 根据关键字查找相应的图标
-     */
+
     private int getImageResourceByName(int key, int type) {
         String group = imageMap.get(key);
         String[] ids = group.split(",");
         return Integer.parseInt(ids[type]);
     }
-    /**
-     * ImageView设置图片
-     */
+
     private void setImageView(ImageView image, int resourseId) {
         if (image == null) {
             return;
@@ -98,10 +90,7 @@ public class MainActivity extends ActivityGroup {
         Drawable d = getResources().getDrawable(resourseId);
         image.setImageDrawable(d);
     }
-    /**
-     * 通过判断v，当v与lastview不一样时，图片改变，背景为灰色
-     * @param v
-     */
+
     private void changeBg(ImageView v) {
         setImageView(v, getImageResourceByName(v.getId(), LIGHT));
         v.setImageResource(getImageResourceByName(v.getId(), LIGHT));
@@ -117,7 +106,6 @@ public class MainActivity extends ActivityGroup {
             return;
         }
         int checkedId = view.getId();
-//        如果当前的view id与点击的radiobutton的id一致，点击时不会返回最
         int lastCheckedId = lastView.getId();
         if (checkedId == lastCheckedId) {
             return;
@@ -141,7 +129,6 @@ public class MainActivity extends ActivityGroup {
         container.post(new Runnable() {
             @Override
             public void run() {
-//            	设置动画
                 Animation anim = AnimationUtils.loadAnimation(MainActivity.this, position == FORWARD ? R.anim.out_right_to_left : R.anim.out_left_to_right);
                 anim.setAnimationListener(animationListener);
                 Animation anim1 = AnimationUtils.loadAnimation(MainActivity.this, position == FORWARD ? R.anim.in_right_to_left : R.anim.in_left_to_right);
@@ -169,7 +156,7 @@ public class MainActivity extends ActivityGroup {
         int keyCode = event.getKeyCode();
         int action = event.getAction();
         if (keyCode == KeyEvent.KEYCODE_MENU) {
-        	Activity current = getLocalActivityManager().getCurrentActivity();
+            Activity current = getLocalActivityManager().getCurrentActivity();
             if (current != null) {
                 current.openOptionsMenu();
             }
@@ -182,19 +169,19 @@ public class MainActivity extends ActivityGroup {
     }
 
 
-    public void startActivityById(String clas, Map<String, String> para) {
+    public void startActivityById(String clazz, Map<String, String> para) {
         try {
-            setUpIntent(clas, para);
+            setUpIntent(clazz, para);
         } catch (ClassNotFoundException e) {
             LogUtils.e(e.getMessage());
         }
     }
 
-    private void setUpIntent(String clas, Map<String, String> para) throws ClassNotFoundException {
-        Class<?> targetClas = Class.forName(clas);
-        Activity activity = getLocalActivityManager().getActivity(clas);
+    private void setUpIntent(String clazz, Map<String, String> para) throws ClassNotFoundException {
+        Class<?> targetClazz = Class.forName(clazz);
+        Activity activity = getLocalActivityManager().getActivity(clazz);
         if (activity == null) {
-            Intent intent = new Intent(this, targetClas);
+            Intent intent = new Intent(this, targetClazz);
             if (para != null && !para.isEmpty()) {
                 Iterator<String> it = para.keySet().iterator();
                 while (it.hasNext()) {
@@ -203,12 +190,12 @@ public class MainActivity extends ActivityGroup {
                     intent.putExtra(key, value);
                 }
             }
-            Window window = getLocalActivityManager().startActivity(clas, intent);
+            Window window = getLocalActivityManager().startActivity(clazz, intent);
             setBody(window.getDecorView(), FORWARD);
             return;
         }
         BaseActivity.currentActivity = (BaseActivity) activity;
-        setBody(activity.getWindow().getDecorView());
+        setBody(activity.getWindow().getDecorView(),FORWARD);
         BaseActivity.currentActivity.changeStack();
     }
 
@@ -219,16 +206,4 @@ public class MainActivity extends ActivityGroup {
         }
         container.addView(view);
     }
-
-
-//    private void startActivityById(String id,Class<?> clas){
-//		Activity activity = getLocalActivityManager().getActivity(id);
-//		if(activity!=null){
-//			BaseActivity.currentActivity = (BaseActivity)activity;
-//			setBody(activity.getWindow().getDecorView(),FORWARD);
-//		}
-//		else{
-//		    setBody(getLocalActivityManager().startActivity(id, new Intent(this, clas)).getDecorView(),FORWARD);
-//		}
-//	}
 }

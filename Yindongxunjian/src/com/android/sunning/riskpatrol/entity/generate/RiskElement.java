@@ -1,14 +1,15 @@
 package com.android.sunning.riskpatrol.entity.generate;
 
-import com.google.gson.annotations.Expose;
-import com.lidroid.xutils.db.annotation.Id;
-import com.lidroid.xutils.db.annotation.Transient;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.lidroid.xutils.db.annotation.Id;
+import com.lidroid.xutils.db.annotation.Transient;
 
 public class RiskElement {
 
@@ -29,6 +30,10 @@ public class RiskElement {
     private String FengXiang;
     @Expose
     private String EName;
+
+    @Expose
+    private Attachements attachements ;
+
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -117,4 +122,11 @@ public class RiskElement {
         return new EqualsBuilder().append(RID, rhs.RID).append(FengBu, rhs.FengBu).append(FengXiang, rhs.FengXiang).append(EName, rhs.EName).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 
+    public Attachements getAttachements() {
+        return attachements;
+    }
+
+    public void setAttachements(Attachements attachements) {
+        this.attachements = attachements;
+    }
 }

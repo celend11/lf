@@ -1,27 +1,21 @@
 package com.android.sunning.riskpatrol.activity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.yindongxunjian.R;
-import com.android.sunning.riskpatrol.db.DBHelper;
-import com.android.sunning.riskpatrol.entity.generate.login.Login;
 import com.android.sunning.riskpatrol.fragment.HomeHistoryFragment;
 import com.android.sunning.riskpatrol.fragment.HomeTaskFragment;
-import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.view.annotation.ViewInject;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.commons.logging.Log;
+import com.example.yindongxunjian.R;
 
 /**
  * Created by sunning on 15/2/11.
@@ -30,10 +24,9 @@ public class HomeActivity extends BaseActivity {
 
     private LinearLayout myTask , myHistory ;
     private ImageView taskIM , historyIM ;
-    private TextView taskTV , historyTV,titleTV ;
+    private TextView taskTV , historyTV , userNameTV ;
     private int position = -1;
-    private DBHelper dbhelper;
-    private Login login=new Login();
+
     private static final String MY_TASK = "my_task" ;
     private static final String MY_HISTORY = "my_history" ;
 
@@ -43,25 +36,26 @@ public class HomeActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.home);
         super.onCreate(savedInstanceState);
+        String currentName = dbHelper.queryCurrentLogin().getName() ;
+        String title = userNameTV.getText().toString() ;
+        if(!TextUtils.isEmpty(currentName)){
+            String currentUserName = String.format(title,currentName) ;
+            userNameTV.setText(currentUserName) ;
+        }
         setContentByFragment(MY_TASK) ;
-        dbhelper=DBHelper.getDbHelperInstance(HomeActivity.this);
-        login=null;
-        login=dbHelper.queryCurrentLogin();        
-        titleTV.setText("当前用户："+login.getName());
     }
-    
+
     @Override
     protected void findView() {
+        userNameTV = (TextView) findViewById(R.id.common_title_tv) ;
         myTask = (LinearLayout) findViewById(R.id.home_my_task_parent);
         myHistory = (LinearLayout) findViewById(R.id.home_my_history_parent);
         taskIM = (ImageView) findViewById(R.id.home_my_task_im);
         historyIM = (ImageView) findViewById(R.id.home_my_history_im) ;
-        titleTV=(TextView) findViewById(R.id.common_title_tv);
         taskTV = (TextView) findViewById(R.id.home_my_task_tv);
         historyTV = (TextView) findViewById(R.id.home_my_history_tv);
-//        titleTV.setText("当前用户："+login.getName());
     }
-    
+
     @Override
     protected void findEvent() {
         myTask.setOnClickListener(this) ;
@@ -74,13 +68,11 @@ public class HomeActivity extends BaseActivity {
         switch (v.getId()){
             case R.id.home_my_task_parent:
                 position = 0 ;
-//			显示我的任务的fragment界面
-                setContentByFragment(MY_TASK);
+                setContentByFragment(MY_TASK) ;
                 break;
             case R.id.home_my_history_parent:
                 position = 1 ;
-//    		显示完成历史的fragment界面                
-                setContentByFragment(MY_HISTORY);
+                setContentByFragment(MY_HISTORY) ;
                 break;
         }
         changeColor(position) ;
@@ -113,7 +105,6 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void setContentByFragment(String flag){
-//    	添加fragment
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction() ;
         Fragment fragment = null;
         if(flag.equals(MY_TASK)){
@@ -129,8 +120,8 @@ public class HomeActivity extends BaseActivity {
             }
             cache.put(MY_HISTORY, fragment) ;
         }
+//        transaction.setCustomAnimations(R.anim.in_left_to_right, R.anim.in_right_to_left);
         transaction.replace(R.id.home_body , fragment , "") ;
-//        相对与commit来说，commit在系统数据没有保存已经前跳转，是会报错的，但是commitallowingstateloss,是应许这种情况的，不会报错
         transaction.commitAllowingStateLoss() ;
     }
 }

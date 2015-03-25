@@ -5,20 +5,30 @@
  */
 package com.android.sunning.riskpatrol.util;
 
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.channels.FileChannel;
+
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
+
 import com.android.sunning.riskpatrol.Const;
 
-import java.io.*;
-import java.nio.channels.FileChannel;
 
- 
 /**
  * 文件操作封装
- *
  */
 public final class FileUtil {
 
@@ -106,9 +116,9 @@ public final class FileUtil {
             Log.e(TAG, "deleteFile error", e);
         }
     }
-    
+
     public static boolean deleteFiles(String filePath) {
-    	File mFile = new File(filePath);
+        File mFile = new File(filePath);
 
         if (mFile.isDirectory() && !mFile.exists()) {
             return mFile.mkdirs();
@@ -200,14 +210,15 @@ public final class FileUtil {
 
     /**
      * <p>将文件转成base64 字符串</p>
+     *
      * @param path 文件路径
      * @return
      * @throws Exception
      */
     public static String encodeBase64File(String path) throws Exception {
-        File  file = new File(path);
+        File file = new File(path);
         FileInputStream inputFile = new FileInputStream(file);
-        byte[] buffer = new byte[(int)file.length()];
+        byte[] buffer = new byte[(int) file.length()];
         inputFile.read(buffer);
         inputFile.close();
         return Base64.encodeToString(buffer, Base64.NO_WRAP);
@@ -215,14 +226,15 @@ public final class FileUtil {
 
     /**
      * <p>将文件转成base64 字符串</p>
+     *
      * @param path 文件路径
      * @return
      * @throws Exception
      */
     public static String encodeBase64File(String path, String code) throws Exception {
-        File  file = new File(path);
+        File file = new File(path);
         FileInputStream inputFile = new FileInputStream(file);
-        byte[] buffer = new byte[(int)file.length()];
+        byte[] buffer = new byte[(int) file.length()];
         inputFile.read(buffer);
         inputFile.close();
         return Base64.encodeToString(buffer, Base64.NO_WRAP);
@@ -230,11 +242,12 @@ public final class FileUtil {
 
     /**
      * <p>将base64字符解码保存文件</p>
+     *
      * @param base64Code
      * @param targetPath
      * @throws Exception
      */
-    public static void decoderBase64File(String base64Code,String targetPath) throws Exception {
+    public static void decoderBase64File(String base64Code, String targetPath) throws Exception {
         byte[] buffer = Base64.decode(base64Code, Base64.NO_WRAP);
         FileOutputStream out = new FileOutputStream(targetPath);
         out.write(buffer);
@@ -243,129 +256,151 @@ public final class FileUtil {
 
     /**
      * <p>将base64字符保存文本文件</p>
+     *
      * @param base64Code
      * @param targetPath
      * @throws Exception
      */
-    public static void toFile(String base64Code,String targetPath) throws Exception {
+    public static void toFile(String base64Code, String targetPath) throws Exception {
         byte[] buffer = base64Code.getBytes();
         FileOutputStream out = new FileOutputStream(targetPath);
         out.write(buffer);
         out.close();
     }
-    
+
     private String SDPATH;
-    
-    public String getSDPATH(){
-     return SDPATH;
+
+    public String getSDPATH() {
+        return SDPATH;
     }
-    
-    public FileUtil(){
-     SDPATH= Environment.getExternalStorageDirectory()+"/";
+
+    public FileUtil() {
+        SDPATH = Environment.getExternalStorageDirectory() + "/";
     }
-    
-    public File createSDFile(String fileName) throws IOException{
-     File file = new File(SDPATH+fileName);
-     file.createNewFile();
-     return file;
+
+    public File createSDFile(String fileName) throws IOException {
+        File file = new File(SDPATH + fileName);
+        file.createNewFile();
+        return file;
     }
+
     public File createSDDir(String dirName) {
-     File dir = new File(SDPATH+dirName);
-     dir.mkdir();
-     return dir;
+        File dir = new File(SDPATH + dirName);
+        dir.mkdir();
+        return dir;
     }
-    public boolean isFileExist(String fileName){
-     File file = new File(SDPATH+fileName);
-     return file.exists();
+
+    public boolean isFileExist(String fileName) {
+        File file = new File(SDPATH + fileName);
+        return file.exists();
     }
-    public File write2SDFromInput(String path,String fileName,InputStream input){
-     File file = null;
-     OutputStream output = null;
-     try{
-      createSDDir(path);
-      file = createSDFile(path+fileName);
-      output = new FileOutputStream(file); 
-      byte buffer[] = new byte[4*1024];
-      while((input.read(buffer))!=-1){
-       output.write(buffer);
-      }
-      output.flush();
-     }catch(Exception e){
-      e.printStackTrace();
-     }finally{
-      try{
-       output.close();
-      }
-      catch(Exception e){
-       e.printStackTrace();
-      }
-     }
-     
-     return file;
+
+    public File write2SDFromInput(String path, String fileName, InputStream input) {
+        File file = null;
+        OutputStream output = null;
+        try {
+            createSDDir(path);
+            file = FileUtils.createNewFile(path + fileName);
+            output = new FileOutputStream(file);
+            byte buffer[] = new byte[4 * 1024];
+            while ((input.read(buffer)) != -1) {
+                output.write(buffer);
+            }
+            output.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                output.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return file;
     }
-    
+
     public static String SaveFileToSDCard(String path, String name, byte[] bytes) {
 
-		String dir = getBaseDir();
-		if (path != null && !path.equals("")) {
-			dir += File.separator + path;
-		}
-		try {
-			File fileDir = new File(dir);
-			if (!fileDir.exists()) {
-				fileDir.mkdirs();
-			}
+        String dir = getBaseDir();
+        if (path != null && !path.equals("")) {
+            dir += File.separator + path;
+        }
+        try {
+            File fileDir = new File(dir);
+            if (!fileDir.exists()) {
+                fileDir.mkdirs();
+            }
 
-			dir += File.separator + name;
-			File saveFile = new File(dir);
-			if (!saveFile.exists()) {
-				saveFile.createNewFile();
-			}
-			FileOutputStream os = new FileOutputStream(saveFile);
-			os.write(bytes);
-			os.close();
+            dir += File.separator + name;
+            File saveFile = new File(dir);
+            if (!saveFile.exists()) {
+                saveFile.createNewFile();
+            }
+            FileOutputStream os = new FileOutputStream(saveFile);
+            os.write(bytes);
+            os.close();
 
-			return dir;
-		} catch (FileNotFoundException e) {
-			System.out.println("SD openFileOutput - FileNotFoundException!!!");
-		} catch (IOException e) {
-			System.out.println("SD openFileOutput - IOException!!!");
-		}
+            return dir;
+        } catch (FileNotFoundException e) {
+            System.out.println("SD openFileOutput - FileNotFoundException!!!");
+        } catch (IOException e) {
+            System.out.println("SD openFileOutput - IOException!!!");
+        }
 
-		return null;
-	}
-    
+        return null;
+    }
+
     public static String getBaseDir() {
-		String dir;
-		if (Environment.getExternalStorageState().equals(
-				Environment.MEDIA_MOUNTED)) {
-			dir = Const.Path.APP_DIR;
-		} else {
-			dir = Const.Path.APP_DIR;
-		}
-		return dir;
-	}
-    
-    /** 
-	 * 保存文件 
-	 * @param bm 
-	 * @param fileName 
-	 * @throws java.io.IOException
-	 */  
-	public static String SaveFileToSDCard(Bitmap bm, String path,String fileName) throws IOException {  
+        String dir;
+        if (Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED)) {
+            dir = Const.Path.APP_DIR;
+        } else {
+            dir = Const.Path.APP_DIR;
+        }
+        return dir;
+    }
 
-		File myCaptureFile = new File(path + "/" + fileName);  
-		if(myCaptureFile.exists()){
-			return null;
-		}
-		try{
- 		BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile)); 
-		bm.compress(Bitmap.CompressFormat.JPEG, 80, bos);  
-		bos.flush();  
-		bos.close();  
-	    }catch(NullPointerException e){
-	    	e.printStackTrace();
-	    }
-		return myCaptureFile.getPath();
-	} 
+    /**
+     * 保存文件
+     *
+     * @param bm
+     * @param fileName
+     * @throws java.io.IOException
+     */
+    public static String SaveFileToSDCard(Bitmap bm, String path, String fileName) throws IOException {
+
+        File myCaptureFile = new File(path + "/" + fileName);
+        if (myCaptureFile.exists()) {
+            return null;
+        }
+        try {
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
+            bm.compress(Bitmap.CompressFormat.JPEG, 80, bos);
+            bos.flush();
+            bos.close();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return myCaptureFile.getPath();
+    }
+
+    public static String readFile(String path){
+        File myFile=new File(path);
+        if(!myFile.exists()) {
+            System.err.println("Can't Find " + path);
+        }try {
+            BufferedReader in = new BufferedReader(new FileReader(myFile));
+            String str;
+            while ((str = in.readLine()) != null) {
+                System.out.println(str);
+            }
+            in.close();
+        } catch (IOException e)
+        {
+            e.getStackTrace();
+        }
+        return "" ;
+    }
 }

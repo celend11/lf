@@ -14,4 +14,5 @@ public class BaseEntity implements Serializable {
     public int id ;
     public int code = -1;
     public String message ;
+
 }

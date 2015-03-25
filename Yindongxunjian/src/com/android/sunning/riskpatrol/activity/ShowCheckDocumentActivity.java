@@ -2,6 +2,10 @@ package com.android.sunning.riskpatrol.activity;
 
 import android.os.Bundle;
 import android.view.View;
+
+import com.android.sunning.riskpatrol.Const;
+import com.android.sunning.riskpatrol.entity.generate.Datum;
+import com.android.sunning.riskpatrol.util.Utils;
 import com.example.yindongxunjian.R;
 
 /**
@@ -10,10 +14,13 @@ import com.example.yindongxunjian.R;
  */
 public class ShowCheckDocumentActivity extends BaseActivity{
 
+    private Datum currentDatum;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.show_check_docment_layout);
         super.onCreate(savedInstanceState);
+        currentDatum = (Datum) application.getSession().get(Const.KEY.CURRENT_SHOW_DATUM) ;
     }
 
     @Override
@@ -30,5 +37,12 @@ public class ShowCheckDocumentActivity extends BaseActivity{
     @Override
     protected void findEvent() {
 
+    }
+
+    @Override
+    public void performBackPressed() {
+        super.performBackPressed();
+        Utils.destroy(ShowCheckDocumentActivity.class.getName(), getActivityGroup().getLocalActivityManager());
+        application.getSession().remove(Const.KEY.CURRENT_SHOW_DATUM) ;
     }
 }

@@ -1,10 +1,10 @@
 package com.android.sunning.riskpatrol.net.parse;
 
+import org.json.JSONObject;
+
 import com.android.sunning.riskpatrol.entity.BaseEntity;
 import com.android.sunning.riskpatrol.entity.generate.Areas;
 import com.android.sunning.riskpatrol.util.JSONUtils;
-import com.lidroid.xutils.util.LogUtils;
-import org.json.JSONObject;
 
 /**
  * Created by sunning on 15/2/25.

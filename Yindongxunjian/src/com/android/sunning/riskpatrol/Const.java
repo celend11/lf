@@ -1,6 +1,7 @@
 package com.android.sunning.riskpatrol;
 
 import android.os.Environment;
+
 import com.android.sunning.riskpatrol.activity.HomeActivity;
 import com.android.sunning.riskpatrol.activity.MyCollectActivity;
 import com.android.sunning.riskpatrol.activity.SetupActivity;
@@ -9,8 +10,8 @@ import com.android.sunning.riskpatrol.activity.SetupActivity;
  * Created by sunning on 14-7-31.
  */
 public class Const {
-//	服务器接口ipa地址
     public static final String URL = "http://cqjg-test.telsafe.com.cn/";
+//    public static final String URL = "http://192.168.90.51:8081/";
     public static final String APP_ID = "nhf2iv20n9vev3k4bqrp5i";
     public static final String SECRET_KEY = "33cth9t1dt0i9h9eoaba40g2ciorg6dz3hxjzrpc3csw9qcev7fx22alrcfc96fjexs47nd9e24v85n71b7vn5jmg5atmlm2kl8n0k03r6bks17vj4h90eljgueiec0h";
 
@@ -20,6 +21,9 @@ public class Const {
     public static final String WX_APP_ID = "wx6ee9e32cb7ff0bd5";
     public static String APP_SECRET = "558f2065acfb9655e8e2f362b13ba89c";
 
+
+
+
     public int DBVersion = -1;
 
     /** 数据库下载地址 */
@@ -27,6 +31,11 @@ public class Const {
 
     /** 当前版本 */
     public static final int CUR_VERSION = 1;
+
+    public static final int AUTO_SAVE_TIME = 10 * 1000 ;
+
+
+
 
     public static final String bottomMenuRootClass[] = {
             HomeActivity.class.getSimpleName(), MyCollectActivity.class.getSimpleName(),
@@ -53,6 +62,7 @@ public class Const {
     }
     public static class KEY{
         public final static String CURRENT_CHECK_POINT = "current_check_point" ;
+
         public final static String CURRENT_RESULT_DETAIL = "current_result_detail" ;
         public final static String CHECK_POINT_TITLE = "check_point_title" ;
         public final static String CHECK_POINT_TYPE = "check_point_type" ;
@@ -60,12 +70,29 @@ public class Const {
         public final static String CHECK_POINT_TYPE_NEW = "check_point_type_new" ;
         public final static String CHECK_POINT_TYPE_WEB = "check_point_type_new_web" ;
 
+        public final static String COLLECT_LIST_FLAG = "collect_list_flag" ;
+
+        public final static String COLLECT_LIST_TYPE = "collect_list_type" ;
+
+        public final static String COLLECT_LIST_IS_FINISH = "collect_list_is_finish" ;
+
+        public final static String COLLECT_LIST_TITLE = "collect_list_title" ;
+
+        public final static String CURRENT_SHOW_DATUM = "current_show_datum" ;
+
+        public final static String CURRENT_EDIT_DATUM = "current_edit_datum" ;
+
+        public final static String FILE_PATH = "file_path" ;
+
         public final static String URI = "uri" ;
+
+        public final static String UN_UPLOAD_COUNT = "un_upload_count" ;
 
     }
     public static class Message{
-        public static final int USER = 0x009902 ;
         public static final int UPLOAD_IMAGE_ING = 0x009903;
+        public static final int OPEN = 0x009904;
+        public static final int CLOSE = 0x009905;
     }
 
 
@@ -171,9 +198,13 @@ public class Const {
 
         public static final String CACHE_DIR = APP_DIR + "cache/";
 
-        public static final String DOWNLOAD = APP_DIR + "download/";
-
         public static final String CAMERA_TEMP = "temp/";
+
+        public static final String FILE_LOCAL = APP_DIR + "local/";
+
+        public static final String RECORD_LOCAL = APP_DIR + "record/";
+
+        public static final String FILE_SYNCHRONIZATION = APP_DIR + "synchronization/";
 
     }
 
@@ -186,7 +217,10 @@ public class Const {
         public static final String GET_SITE_USERS = "Android/GetSiteUsers?" ;//获取受检责任人数据
         public static final String GET_SITE_DATAS = "Android/GetSiteDatas?" ;//获取详细工点数据
         public static final String GET_RISK_ELEMENT_DATAS = "Android/GetRiskElementDatas?" ;//获取风险因素
-        public static final String UPLOAD_ATTACH = "" ;
+        public static final String SUBMIT_CHECK_LIST = "Android/UploadNormalCheckList?" ;//获取风险因素
+        public static final String GET_MY_SUMMARY = "Android/GetMySummary?" ;//获取汇总信息
+        public static final String GET_DETAIL = "Android/GetDetail?" ;//获取汇总详细信息
+        public static final String UPLOAD_ATTACH = "File/Upload/" ;
     }
 
     public static class CollectType{

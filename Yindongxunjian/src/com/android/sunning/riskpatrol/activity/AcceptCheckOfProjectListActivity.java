@@ -42,7 +42,7 @@ public class AcceptCheckOfProjectListActivity extends ListViewActivity<Site>{
         setContentView(R.layout.accept_check_leader_layout);
         super.onCreate(savedInstanceState) ;
         setTitle("受检项目") ;
-        setRightListener(this);
+        setRightListener(this) ;
         sendRequest() ;
     }
 
@@ -64,7 +64,7 @@ public class AcceptCheckOfProjectListActivity extends ListViewActivity<Site>{
                     selectSite.setSiteName(site.getName()) ;
                     createCheckPointActivity.rootDatum.setSite(selectSite) ;
                     createCheckPointActivity.setProjectTitle(site.getName()) ;
-                    application.getSession().remove(Const.KEY.CURRENT_CHECK_POINT) ;
+//                    application.getSession().remove(Const.KEY.CURRENT_CHECK_POINT) ;
                     performBackPressed() ;
                 }else{
                     toast("请选择受检项目");

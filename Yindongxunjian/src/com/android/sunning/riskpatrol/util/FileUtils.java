@@ -97,11 +97,9 @@ public class FileUtils {
 			} else {
 				temp = new File(path + File.separator + tempList[i]);
 			}
-//			判断temp为文件，直接删除
 			if (temp.isFile()) {
 				temp.delete();
 			}
-//			判断temp为文件还是文件夹，如果是文件夹，进行递归继续删除
 			if (temp.isDirectory()) {
 				delAllFile(path + "/" + tempList[i]);
 				delFolder(path + "/" + tempList[i]);

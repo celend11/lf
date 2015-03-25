@@ -1,12 +1,12 @@
 
 package com.android.sunning.riskpatrol.entity.generate.login;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Site {
     private int id ;

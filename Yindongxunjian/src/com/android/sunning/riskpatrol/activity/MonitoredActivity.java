@@ -16,9 +16,9 @@
 
 package com.android.sunning.riskpatrol.activity;
 
-import android.os.Bundle;
-
 import java.util.ArrayList;
+
+import android.os.Bundle;
 
 /*
  * Modified from original in AOSP.

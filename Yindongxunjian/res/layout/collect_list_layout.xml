@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/dp50">
+
+    <TextView
+            android:text="编号"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_width="wrap_content"
+            style="@style/textStyleSmall"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent"/>
+    <TextView
+            android:text="编号"
+            android:id="@+id/collect_list_item_num"
+            android:layout_marginLeft="@dimen/dp10"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            style="@style/textStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+    <ImageView
+            android:src="@drawable/arrow_right_icon"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_height="match_parent"/>
+</LinearLayout>

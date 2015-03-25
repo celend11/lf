@@ -21,51 +21,23 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
-            android:paddingBottom="@dimen/dp5"
             android:paddingTop="@dimen/dp5"
-            android:src="@drawable/home_icon_day" />
+            android:paddingBottom="@dimen/dp5"
+            android:src="@drawable/home_icon_day"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp55"
-            android:orientation="vertical" >
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:text="日常检查(%s)"
+            android:textColor="#727272"
+           style="@style/editTextStyle"/>
 
-            <TextView
-                android:id="@+id/item_name"
-                style="@style/editTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:gravity="left|center_vertical"
-                android:paddingLeft="10dp"
-                android:singleLine="true"
-                android:text="日常检查(%s)"
-                android:textColor="#727272" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:layout_weight="1" >
-
-                <TextView
-                    android:id="@+id/finsh"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="已完成(20)"
-                    android:textColor="#00ff00" />
-
-                <TextView
-                    android:id="@+id/unfinsh"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="未完成(20)"
-                    android:textColor="#ff0000" />
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 
     <View

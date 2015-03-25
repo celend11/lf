@@ -6,8 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.android.sunning.riskpatrol.RiskPatrolApplication;
 import com.android.sunning.riskpatrol.activity.BaseActivity;
+import com.android.sunning.riskpatrol.entity.generate.login.Login;
 import com.android.sunning.riskpatrol.system.HandlerCallBackListener;
 import com.android.sunning.riskpatrol.system.HandlerManager;
 
@@ -22,6 +24,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     protected Fragment currentFragment ;
     protected LayoutInflater inflater ;
     protected boolean isFirst = true;
+    protected Login login ;
 
 
     @Override
@@ -56,7 +59,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findView() ;
-        start() ;
     }
 
     protected abstract void start();

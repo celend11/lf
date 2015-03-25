@@ -43,7 +43,7 @@ public class AddCheckProjectActivity extends BaseActivity {
                 for (int i = 0; i < size; i++) {
                     innerLayout = (LinearLayout) layoutInflater.inflate(R.layout.check_result_layout_inner, null);
                     Area checkArea = jianChaXiangMu.getAreas().get(i);
-                    if (checkArea.isSelect) {
+                    if (checkArea.isSelect || !createCheckPointActivity.isNewCreate) {
                         View title = createTitle(checkArea);
                         innerLayout.addView(title);
                         View content = createContentView(checkArea);

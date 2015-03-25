@@ -1,10 +1,10 @@
 package com.android.sunning.riskpatrol.util;
 
+import java.lang.ref.SoftReference;
+
 import android.content.Context;
 import android.view.Gravity;
 import android.widget.Toast;
-
-import java.lang.ref.SoftReference;
 
 
 public final class ToastMaster {

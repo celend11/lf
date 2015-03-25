@@ -1,10 +1,10 @@
 package com.android.sunning.riskpatrol.system;
 
-import android.os.Message;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
+import android.os.Message;
 
 /**
  * Created by sunning on 14-9-29.

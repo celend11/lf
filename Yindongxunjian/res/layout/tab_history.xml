@@ -76,7 +76,6 @@
                 android:layout_height="@dimen/dp55"
                 android:orientation="horizontal">
             <EditText
-                	android:id="@+id/start_time"
                     android:layout_width="0dip"
                     android:layout_weight="1"
                     android:paddingLeft="@dimen/dp10"
@@ -102,7 +101,6 @@
                     android:textColor="#727272"
                     style="@style/editTextStyle"/>
             <EditText
-                	android:id="@+id/end_time"
                     android:layout_width="0dip"
                     android:layout_weight="1"
                     android:paddingLeft="@dimen/dp10"

@@ -1,6 +1,5 @@
 package com.android.sunning.riskpatrol.activity;
 
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,7 +11,7 @@ import com.android.sunning.riskpatrol.adapter.CommonAdapter;
 import com.android.sunning.riskpatrol.entity.BaseEntity;
 import com.android.sunning.riskpatrol.entity.E_AcceptCheckLeader;
 import com.android.sunning.riskpatrol.entity.E_FuZeRen;
-import com.android.sunning.riskpatrol.entity.generate.JianChaFuZeRenC;
+import com.android.sunning.riskpatrol.entity.generate.ShouJianFuZeRen;
 import com.android.sunning.riskpatrol.net.HttpInteraction;
 import com.android.sunning.riskpatrol.net.RequestInfo;
 import com.android.sunning.riskpatrol.util.Utils;
@@ -88,12 +87,17 @@ public class AcceptCheckOfLeaderActivity extends ListViewActivity<E_AcceptCheckL
                     CreateCheckPointActivity createCheckPointActivity = (CreateCheckPointActivity) application.getSession().get(Const.KEY.CURRENT_CHECK_POINT) ;
                     E_AcceptCheckLeader leader = adapter.getItem(adapter.getSelectFlag()) ;
                     if(leader != null){
-                        JianChaFuZeRenC jianChaFuZeRenC = new JianChaFuZeRenC() ;
-                        jianChaFuZeRenC.setJianChaFuZeRen(leader.leaderName) ;
-                        jianChaFuZeRenC.setJianChaFuZeRenID(leader.leaderID) ;
-                        createCheckPointActivity.rootDatum.setJianChaFuZeRenC(jianChaFuZeRenC) ;
+//                        JianChaFuZeRenC jianChaFuZeRenC = new JianChaFuZeRenC() ;
+//                        jianChaFuZeRenC.setJianChaFuZeRen(leader.leaderName) ;
+//                        jianChaFuZeRenC.setJianChaFuZeRenID(leader.leaderID) ;
+//                        createCheckPointActivity.rootDatum.setJianChaFuZeRenC(jianChaFuZeRenC) ;
+                        createCheckPointActivity.rootDatum.setJianChaFuZeRen(leader.leaderName) ;
+                        ShouJianFuZeRen shouJianFuZeRen = new ShouJianFuZeRen() ;
+                        shouJianFuZeRen.setShouJianFuZeRenID(leader.leaderID) ;
+                        shouJianFuZeRen.setShouJianFuZeRenName(leader.leaderName) ;
+                        createCheckPointActivity.rootDatum.setShouJianFuZeRen(shouJianFuZeRen) ;
                         createCheckPointActivity.setLeaderName(leader.leaderName) ;
-                        application.getSession().remove(Const.KEY.CURRENT_CHECK_POINT) ;
+//                        application.getSession().remove(Const.KEY.CURRENT_CHECK_POINT) ;
                         performBackPressed() ;
                     }
                 }else{

@@ -6,11 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <!--<View-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dip"-->
-            <!--android:layout_marginTop="@dimen/dp10"/>-->
-
 
     <LinearLayout
             android:orientation="horizontal"
@@ -130,6 +125,7 @@
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:id="@+id/check_result_layout_inner_layout_submit_btn"
                 android:src="@drawable/submit_normal_selector"
                 android:visibility="visible"
                 android:clickable="true"

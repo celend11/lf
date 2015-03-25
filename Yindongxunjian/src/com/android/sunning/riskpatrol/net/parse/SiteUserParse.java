@@ -1,10 +1,11 @@
 package com.android.sunning.riskpatrol.net.parse;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import com.android.sunning.riskpatrol.entity.BaseEntity;
 import com.android.sunning.riskpatrol.entity.E_AcceptCheckLeader;
 import com.android.sunning.riskpatrol.entity.E_FuZeRen;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 /**
  * Created by sunning on 15/2/25.

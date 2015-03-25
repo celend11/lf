@@ -1,19 +1,32 @@
 
 package com.android.sunning.riskpatrol.entity.generate;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.android.sunning.riskpatrol.entity.AttachmentType;
+import com.google.gson.annotations.Expose;
 
-public class Attachments {
+public class Attachment {
 
+    @Expose
     private String FileName;
+    @Expose
     private String FileOldName;
+    @Expose
     private String Size;
+    @Expose
     private String FileUrl;
+
+    private File file ;
+
+    public AttachmentType attachmentType ;
+
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -111,11 +124,18 @@ public class Attachments {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Attachments) == false) {
+        if ((other instanceof Attachment) == false) {
             return false;
         }
-        Attachments rhs = ((Attachments) other);
+        Attachment rhs = ((Attachment) other);
         return new EqualsBuilder().append(FileName, rhs.FileName).append(FileOldName, rhs.FileOldName).append(Size, rhs.Size).append(FileUrl, rhs.FileUrl).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
 }

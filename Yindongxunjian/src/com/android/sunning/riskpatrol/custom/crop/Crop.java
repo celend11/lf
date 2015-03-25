@@ -1,5 +1,7 @@
 package com.android.sunning.riskpatrol.custom.crop;
 
+import java.io.File;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
@@ -8,9 +10,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
-import com.android.sunning.riskpatrol.activity.CropImageActivity;
 
-import java.io.File;
+import com.android.sunning.riskpatrol.activity.CropImageActivity;
 
 /**
  * Builder for crop Intents and utils for handling result

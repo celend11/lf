@@ -1,5 +1,20 @@
 package com.android.sunning.riskpatrol.util;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Field;
+import java.net.URLEncoder;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import android.app.Activity;
 import android.app.LocalActivityManager;
 import android.content.Context;
@@ -27,19 +42,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
+
 import com.android.sunning.riskpatrol.Const;
 import com.lidroid.xutils.BitmapUtils;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Field;
-import java.net.URLEncoder;
-import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by sunning on 14-9-28.
@@ -232,9 +237,13 @@ public class Utils {
         return sdf.format(startTime);
     }
 
-    public static String formatDateYYMMDD(long millisecond) {
-        Date startTime = new Date(timeStamp2Date(millisecond));
-        SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd");
+    public static String formatDateForJSON(long millisecond) {
+        return "/Date("+millisecond+")/" ;
+    }
+
+    public static String formatDateYYYYMMDD(long millisecond) {
+        Date startTime = new Date(millisecond) ;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(startTime);
     }
 
@@ -474,6 +483,12 @@ public class Utils {
         return false;
     }
 
+    public static String getCurrentDate() {
+        Date startTime = new Date(System.currentTimeMillis());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(startTime);
+    }
+
     public static boolean destroy(String id, LocalActivityManager activityManager) {
         if (activityManager != null) {
             activityManager.destroyActivity(id, true);
@@ -512,5 +527,31 @@ public class Utils {
             return true;
         }
         return false;
+    }
+
+    public static String formatJSONDate(String time){
+        if(!TextUtils.isEmpty(time)){
+            String result = time.substring(time.indexOf("(")+1,time.indexOf(")")) ;
+            if(!TextUtils.isEmpty(result)){
+                long millisecond = Long.parseLong(result) ;
+                Date startTime = new Date(timeStamp2Date(millisecond));
+                SimpleDateFormat sdf = new SimpleDateFormat("MM月dd日");
+                return sdf.format(startTime);
+            }
+        }
+        return "" ;
+    }
+
+    public static String formatJSONDates(String time){
+        if(!TextUtils.isEmpty(time)){
+            String result = time.substring(time.indexOf("(")+1,time.indexOf(")")) ;
+            if(!TextUtils.isEmpty(result)){
+                long millisecond = Long.parseLong(result) ;
+                Date startTime = new Date(timeStamp2Date(millisecond));
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                return sdf.format(startTime);
+            }
+        }
+        return "" ;
     }
 }

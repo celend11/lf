@@ -3,8 +3,8 @@ package com.android.sunning.riskpatrol.custom.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
+
 import com.example.yindongxunjian.R;
 
 /**

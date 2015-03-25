@@ -1,20 +1,20 @@
 package com.android.sunning.riskpatrol.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+
 import com.android.sunning.riskpatrol.Const;
-import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.adapter.Adapter4AcceptCheckOfHidden;
 import com.android.sunning.riskpatrol.adapter.CommonAdapter;
-import com.android.sunning.riskpatrol.entity.BaseEntity;
-import com.android.sunning.riskpatrol.entity.E_RiskElements;
 import com.android.sunning.riskpatrol.entity.generate.RiskElement;
 import com.android.sunning.riskpatrol.entity.generate.RiskElements;
-import com.android.sunning.riskpatrol.net.HttpInteraction;
-import com.android.sunning.riskpatrol.net.RequestInfo;
 import com.android.sunning.riskpatrol.util.Utils;
+import com.example.yindongxunjian.R;
 import com.lidroid.xutils.util.LogUtils;
 
 /**
@@ -31,28 +31,27 @@ public class AddHiddenDescActivity extends ListViewActivity<RiskElement> {
         super.onCreate(savedInstanceState);
         setTitle("添加隐患说明") ;
         setRightListener(this) ;
-        sendRequest() ;
+//        getAllRiskElements() ;
     }
 
-    private void sendRequest() {
-        HttpInteraction httpInteraction = new HttpInteraction() {
-            @Override
-            public void response(BaseEntity entity) {
-                RiskElements elements = (RiskElements) entity ;
-                if(elements.getRiskElements() != null){
-                    dataForAdapter.addAll(elements.getRiskElements()) ;
-                    adapter.notifyDataSetChanged() ;
-                }
-            }
-        } ;
-        RequestInfo requestInfo = new RequestInfo(Const.InterfaceName.GET_RISK_ELEMENT_DATAS,httpInteraction) {
-            @Override
-            protected void addParams() {
-                CreateCheckPointActivity checkPointActivity = (CreateCheckPointActivity) application.getSession().get(Const.KEY.CURRENT_CHECK_POINT);
-                requestParams.addQueryStringParameter("time" , checkPointActivity.showDate.getText().toString()) ;
-            }
-        } ;
-        requestInfo.execute() ;
+    private void getAllRiskElements() {
+        List<RiskElement> elements = new ArrayList<RiskElement>();
+    	RiskElement risk1=new RiskElement();
+    	risk1.setEName("aaaaaaaaaaa");
+    	risk1.setFengBu("aaaaaaaaaaa");
+    	risk1.setFengXiang("aaaaa");
+    	risk1.setID("AAAAA");
+    	elements.add(risk1);
+    	RiskElement risk2=new RiskElement();
+    	risk2.setEName("bbaaaaaaaaaa");
+    	risk2.setFengBu("bbaaaaaaaaaaa");
+    	risk2.setFengXiang("bbaaaaa");
+    	risk2.setID("bbAAAAA");
+    	elements.add(risk2);
+        if(elements != null){
+            dataForAdapter.addAll(elements) ;
+            adapter.notifyDataSetChanged() ;
+        }
     }
 
     @Override
@@ -86,9 +85,9 @@ public class AddHiddenDescActivity extends ListViewActivity<RiskElement> {
                 riskElements.setRiskElements(adapter.select) ;
                 LogUtils.e("===============" + riskElements.getRiskElements().size());
                 checkResultDetail.setCurrentSelectRiskElement(riskElements) ;
-                Intent intent = new Intent(Const.BroadcastReceiver.ADD_RISK_ELEMENT) ;
-                sendBroadcast(intent) ;
-                performBackPressed() ;
+                Intent intent = new Intent(Const.BroadcastReceiver.ADD_RISK_ELEMENT);
+                sendBroadcast(intent);
+                performBackPressed();
                 break;
         }
         super.onClick(v);

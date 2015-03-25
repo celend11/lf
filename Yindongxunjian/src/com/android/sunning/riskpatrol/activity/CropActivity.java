@@ -1,13 +1,14 @@
 package com.android.sunning.riskpatrol.activity;
 
+import java.io.File;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
+
 import com.android.sunning.riskpatrol.Const;
 import com.android.sunning.riskpatrol.custom.crop.Crop;
-
-import java.io.File;
 
 /**
  * Created by sunning on 14/10/29.

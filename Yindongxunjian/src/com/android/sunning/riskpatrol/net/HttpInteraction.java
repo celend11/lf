@@ -1,7 +1,11 @@
 package com.android.sunning.riskpatrol.net;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.os.Message;
 import android.text.TextUtils;
+
 import com.android.sunning.riskpatrol.Const;
 import com.android.sunning.riskpatrol.entity.BaseEntity;
 import com.android.sunning.riskpatrol.exception.BException;
@@ -10,8 +14,6 @@ import com.android.sunning.riskpatrol.system.HandlerCallBackListener;
 import com.android.sunning.riskpatrol.system.HandlerManager;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.util.LogUtils;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * Created by sunning on 14-9-28.
@@ -42,7 +44,7 @@ public abstract class HttpInteraction implements Interaction, HandlerCallBackLis
     @Override
     public void upload(URLEnCodeRequestParams requestParams) {
         apiName = requestParams.interfaceName ;
-        HttpManager.imgUpload(requestParams, handler);
+        HttpManager.imgUpload(requestParams, handler) ;
     }
 
     @Override
@@ -98,14 +100,13 @@ public abstract class HttpInteraction implements Interaction, HandlerCallBackLis
                     response(bean) ;
                     return ;
                 }
-            }
-            if(code==Const.FAIL){
-            	 bean.message = message ;
-                 bean.code = code ;
-                 if(bean != null){
-                     response(bean) ;
-                     return ;
-                 }
+            }else if(code==Const.FAIL){
+            	  bean.message = message ;
+                  bean.code = code ;
+                  if(bean != null){
+                      response(bean) ;
+                      return ;
+                  }
             }
             fail(new BException(message,code)) ;
         } catch (JSONException e) {

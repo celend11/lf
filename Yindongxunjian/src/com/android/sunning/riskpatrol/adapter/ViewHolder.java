@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.yindongxunjian.R;
+
 import com.android.sunning.riskpatrol.util.ImageLoader;
 
 /**

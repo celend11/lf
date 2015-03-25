@@ -2,14 +2,13 @@ package com.android.sunning.riskpatrol.custom.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.example.yindongxunjian.R;
 import com.android.sunning.riskpatrol.custom.HandyTextView;
+import com.example.yindongxunjian.R;
 
 public class BaseDialog extends Dialog implements
 		View.OnClickListener {
@@ -25,12 +24,10 @@ public class BaseDialog extends Dialog implements
 	private LinearLayout mLayoutBottom;// 底部根布局
 	private Button mBtnButton1;// 底部按钮1
 	private Button mBtnButton2;// 底部按钮2
-	private Button mBtnButton3;// 底部按钮3
 
 	private static BaseDialog mBaseDialog;// 当前的对话框
 	private OnClickListener mOnClickListener1;// 按钮1的单击监听事件
 	private OnClickListener mOnClickListener2;// 按钮2的单击监听事件
-	private OnClickListener mOnClickListener3;// 按钮3的单击监听事件
 
 	public BaseDialog(Context context) {
 		super(context, R.style.Theme_Light_FullScreenDialogAct);
@@ -53,7 +50,6 @@ public class BaseDialog extends Dialog implements
 		mLayoutBottom = (LinearLayout) findViewById(R.id.dialog_generic_layout_bottom);
 		mBtnButton1 = (Button) findViewById(R.id.dialog_generic_btn_button1);
 		mBtnButton2 = (Button) findViewById(R.id.dialog_generic_btn_button2);
-		mBtnButton3 = (Button) findViewById(R.id.dialog_generic_btn_button3);
 		mLayoutRoot.setVisibility(View.VISIBLE);
 		setTitleLineVisibility(View.VISIBLE);
 
@@ -62,7 +58,6 @@ public class BaseDialog extends Dialog implements
 	private void initEvents() {
 		mBtnButton1.setOnClickListener(this);
 		mBtnButton2.setOnClickListener(this);
-		mBtnButton3.setOnClickListener(this);
 	}
 
 	/**
@@ -128,7 +123,6 @@ public class BaseDialog extends Dialog implements
 				button3, listener3)) {
 			mBaseDialog.setButton1(button1, listener1);
 			mBaseDialog.setButton2(button2, listener2);
-			mBaseDialog.setButton3(button3, listener3);
 		}
 		mBaseDialog.setCancelable(true);
 		mBaseDialog.setCanceledOnTouchOutside(true);
@@ -204,17 +198,6 @@ public class BaseDialog extends Dialog implements
 		}
 	}
 
-	public void setButton3(CharSequence text,
-			OnClickListener listener) {
-		if (text != null && listener != null) {
-			mLayoutBottom.setVisibility(View.VISIBLE);
-			mBtnButton3.setVisibility(View.VISIBLE);
-			mBtnButton3.setText(text);
-			mOnClickListener3 = listener;
-		} else {
-			mBtnButton3.setVisibility(View.GONE);
-		}
-	}
 
 	public void setButton1Background(int id) {
 		mBtnButton1.setBackgroundResource(id);
@@ -222,10 +205,6 @@ public class BaseDialog extends Dialog implements
 
 	public void setButton2Background(int id) {
 		mBtnButton2.setBackgroundResource(id);
-	}
-
-	public void setButton3Background(int id) {
-		mBtnButton3.setBackgroundResource(id);
 	}
 
 	public void setTitleLineVisibility(int visibility) {
@@ -247,11 +226,6 @@ public class BaseDialog extends Dialog implements
 			}
 			break;
 
-		case R.id.dialog_generic_btn_button3:
-			if (mOnClickListener3 != null) {
-				mOnClickListener3.onClick(mBaseDialog, 2);
-			}
-			break;
 		}
 	}
 }

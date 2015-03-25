@@ -25,8 +25,14 @@ public class ChooseParse extends ParseOperate{
             parseInfo = new SiteUserParse() ;
         }else if(apiName.equals(Const.InterfaceName.GET_SITE_DATAS)){
             parseInfo = new SiteDataParse() ;
+        }else if(apiName.equals(Const.InterfaceName.GET_MY_SUMMARY)){
+            parseInfo = new SummaryParse() ;
+        }else if(apiName.equals(Const.InterfaceName.GET_DETAIL)){
+            parseInfo = new DetailParse() ;
         }else if(apiName.equals(Const.InterfaceName.GET_RISK_ELEMENT_DATAS)){
             parseInfo = new RiskElementParse() ;
+        }else if(apiName.equals(Const.InterfaceName.UPLOAD_ATTACH)){
+            parseInfo = new UploadParse() ;
         }else{
 
         }

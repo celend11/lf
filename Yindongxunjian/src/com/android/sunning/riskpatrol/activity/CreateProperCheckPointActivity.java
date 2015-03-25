@@ -2,6 +2,7 @@ package com.android.sunning.riskpatrol.activity;
 
 import android.os.Bundle;
 import android.view.View;
+
 import com.example.yindongxunjian.R;
 
 /**
@@ -31,7 +32,7 @@ public class CreateProperCheckPointActivity extends BaseActivity{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.proper_next_step_btn_id:
-                MainActivity templateActivity = currentActivity.getActivityGroup() ;
+                MainActivity templateActivity = currentActivity.getActivityGroup();
                 templateActivity.startActivityById(CheckResultActivity.class.getName(), null) ;
             break;
         }

@@ -1,9 +1,9 @@
 package com.android.sunning.riskpatrol.net;
 
-import com.android.sunning.riskpatrol.Const;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+
+import com.android.sunning.riskpatrol.Const;
 
 /**
  * Created by sunning on 14-8-3.
@@ -40,10 +40,7 @@ public abstract class RequestInfo {
     protected void createApiNameParams(){
         requestParams.addQueryStringParameter("method",ApiName);
     }
-/**
-  * 			目前REQUEST_TYPE_IS_POST，为false，所以用的是requestByGet(requestParams)，
-  * 			而request(requestParams)有些小问题,在完善，所以现在用的都是get方法
-*/
+
     public void execute(){
         params() ;
         if(Const.REQUEST_TYPE_IS_POST){
@@ -53,7 +50,12 @@ public abstract class RequestInfo {
         }
     }
 
-    public void updateImg(){
+    public void executePost(){
+        params() ;
+        interaction.request(requestParams);
+    }
+
+    public void upload(){
         params() ;
         interaction.upload(requestParams) ;
     }

@@ -35,7 +35,7 @@
                 android:layout_height="0dip">
             <TextView
                     android:id="@+id/collect_list_item_finished"
-                    android:text="已完成数(20)"
+                    android:text="已完成数(%s)"
                     android:layout_weight="1"
                     android:textSize="@dimen/sp14"
                     style="@style/editTextStyle"
@@ -45,7 +45,7 @@
                     android:layout_height="match_parent"/>
             <TextView
                     android:id="@+id/collect_list_item_unfinished"
-                    android:text="未完成数(20)"
+                    android:text="未完成数(%s)"
                     android:textSize="@dimen/sp14"
                     style="@style/editTextStyle"
                     android:textColor="#07afea"

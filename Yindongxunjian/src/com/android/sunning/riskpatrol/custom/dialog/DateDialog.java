@@ -1,14 +1,14 @@
 package com.android.sunning.riskpatrol.custom.dialog;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.widget.DatePicker;
 import android.widget.TextView;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
 /**
  * Created by sunning on 15/2/21.
@@ -21,21 +21,24 @@ public class DateDialog {
     private int year;
     private int month;
     private int day;
+    private DateSetFinish dateSetFinish ;
 
-    public DateDialog(TextView showDate, Context context) {
+    public DateDialog(TextView showDate, Context context , DateSetFinish dateSetFinish) {
         this.showDate = showDate;
         this.context = context;
+        this.dateSetFinish = dateSetFinish ;
         init() ;
     }
 
     private void init() {
         initDate() ;
         picker = new DatePickerDialog(context,Datelistener,year,month,day);
-        picker.setCancelable(true);
+        picker.setCancelable(false);
         picker.setButton(DialogInterface.BUTTON_NEGATIVE, "取消",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                    	showDate.setText("2015-02-14");
                         dialog.dismiss() ;
                     }
                 });
@@ -72,13 +75,21 @@ public class DateDialog {
             year=myyear;
             month=monthOfYear;
             day=dayOfMonth;
-            //更新日期
+            //更新日期   
             updateDate();
 
         }
         //当DatePickerDialog关闭时，更新日期显示
         private void updateDate() {
-            showDate.setText(year+"-"+(month+1)+"-" + day);
+            String selectDate = year+"-"+(month+1)+"-" + day ;
+            showDate.setText(selectDate);
+            if(dateSetFinish != null){
+                dateSetFinish.dataFinish(selectDate);
+            }
         }
     };
+
+    public static interface DateSetFinish{
+        public void dataFinish(String date) ;
+    }
 }

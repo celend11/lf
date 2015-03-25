@@ -1,18 +1,18 @@
 
 package com.android.sunning.riskpatrol.entity.generate;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Attachement {
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
-    private List<Attachments> Attachements = new ArrayList<Attachments>();
+public class Attachements {
+
+    private List<Attachment> Attachements = new ArrayList<Attachment>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -20,7 +20,7 @@ public class Attachement {
      * @return
      *     The Attachements
      */
-    public List<Attachments> getAttachements() {
+    public List<Attachment> getAttachements() {
         return Attachements;
     }
 
@@ -29,7 +29,7 @@ public class Attachement {
      * @param Attachements
      *     The Attachements
      */
-    public void setAttachements(List<Attachments> Attachements) {
+    public void setAttachements(List<Attachment> Attachements) {
         this.Attachements = Attachements;
     }
 
@@ -56,10 +56,10 @@ public class Attachement {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Attachement) == false) {
+        if ((other instanceof com.android.sunning.riskpatrol.entity.generate.Attachements) == false) {
             return false;
         }
-        Attachement rhs = ((Attachement) other);
+        com.android.sunning.riskpatrol.entity.generate.Attachements rhs = ((com.android.sunning.riskpatrol.entity.generate.Attachements) other);
         return new EqualsBuilder().append(Attachements, rhs.Attachements).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 

@@ -300,7 +300,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/dp10"
                     >
-                <CheckBox
+             <RadioGroup 
+                       android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                <RadioButton
                         android:text="资料"
                         android:button="@drawable/inner_check_box_selector"
                         style="@style/editTextStyle"
@@ -308,7 +313,7 @@
                         android:paddingLeft="@dimen/dp10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-                <CheckBox
+                <RadioButton
                         android:text="现场"
                         android:layout_marginLeft="@dimen/dp10"
                         android:button="@drawable/inner_check_box_selector"
@@ -317,7 +322,7 @@
                         android:paddingLeft="@dimen/dp10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-
+			</RadioGroup>
             </LinearLayout>
         </LinearLayout>
 

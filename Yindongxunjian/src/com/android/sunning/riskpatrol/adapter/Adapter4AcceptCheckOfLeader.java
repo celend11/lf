@@ -1,11 +1,12 @@
 package com.android.sunning.riskpatrol.adapter;
 
+import java.util.List;
+
 import android.content.Context;
 import android.widget.ImageView;
-import com.example.yindongxunjian.R;
-import com.android.sunning.riskpatrol.entity.E_AcceptCheckLeader;
 
-import java.util.List;
+import com.android.sunning.riskpatrol.entity.E_AcceptCheckLeader;
+import com.example.yindongxunjian.R;
 
 /**
  * Created by sunning on 15/2/13.

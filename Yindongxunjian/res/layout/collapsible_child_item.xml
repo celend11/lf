@@ -17,11 +17,11 @@
 
 
         <TextView
-            	android:id="@+id/text_comp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:singleLine="true"
+                android:id="@+id/home_page_task_patrol_name"
                 android:text="人物资源产业园"
                 android:layout_marginLeft="@dimen/dp10"
                 android:textColor="#878787"
@@ -34,6 +34,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:singleLine="true"
+                android:id="@+id/home_page_task_num"
                 android:text="(3-01-00)"
                 android:layout_marginLeft="@dimen/dp5"
                 android:textColor="#878787"
@@ -47,6 +48,7 @@
                 android:singleLine="true"
                 android:text="李四派发"
                 android:layout_marginLeft="@dimen/dp5"
+                android:id="@+id/home_page_task_dispatch_name"
                 android:textColor="@color/blue_bgk_text_color"
                 android:textSize="@dimen/sp14"
                 style="@style/editTextStyle"/>
@@ -63,6 +65,7 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:text="2月11日"
+                android:id="@+id/home_page_task_create_date"
                 android:layout_marginRight="@dimen/dp10"
                 android:layout_marginLeft="@dimen/dp5"
                 android:textColor="#878787"

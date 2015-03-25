@@ -16,6 +16,10 @@
 
 package com.android.sunning.riskpatrol.custom.crop;
 
+import java.io.Closeable;
+import java.io.File;
+import java.io.IOException;
+
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.database.Cursor;
@@ -24,11 +28,8 @@ import android.net.Uri;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.text.TextUtils;
-import com.android.sunning.riskpatrol.activity.MonitoredActivity;
 
-import java.io.Closeable;
-import java.io.File;
-import java.io.IOException;
+import com.android.sunning.riskpatrol.activity.MonitoredActivity;
 
 /*
  * Modified from original in AOSP.
