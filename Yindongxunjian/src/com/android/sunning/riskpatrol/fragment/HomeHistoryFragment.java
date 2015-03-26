@@ -15,6 +15,7 @@ import com.android.sunning.riskpatrol.Const;
 import com.android.sunning.riskpatrol.activity.MainActivity;
 import com.android.sunning.riskpatrol.activity.ShowCheckDocumentActivity;
 import com.android.sunning.riskpatrol.custom.CollapsibleLinearLayout;
+import com.android.sunning.riskpatrol.db.DBHelper;
 import com.android.sunning.riskpatrol.entity.BaseEntity;
 import com.android.sunning.riskpatrol.net.HttpInteraction;
 import com.android.sunning.riskpatrol.net.RequestInfo;
@@ -28,7 +29,7 @@ import com.example.yindongxunjian.R;
 public class HomeHistoryFragment extends BaseFragment {
 
     private List<View> views;
-
+    private DBHelper dbhelper;
     @Override
     protected int onCreateViewByLayoutId() {
         return R.layout.home_content;
@@ -50,14 +51,16 @@ public class HomeHistoryFragment extends BaseFragment {
         HttpInteraction httpInteraction = new HttpInteraction() {
             @Override
             public void response(BaseEntity entity) {
-
+            	
             }
         };
         RequestInfo requestInfo = new RequestInfo(Const.InterfaceName.GET_NORMAL_CHECK_LIST, httpInteraction) {
             @Override
             protected void addParams() {
-                requestParams.addQueryStringParameter("usID", "4900c2da-7ec4-4fb5-b2ae-c32a28ba5b0a");
-                requestParams.addQueryStringParameter("time", "2015-02-10");
+            	dbhelper=DBHelper.getDbHelperInstance(getActivity());
+            	login=dbhelper.queryCurrentLogin();
+                requestParams.addQueryStringParameter("usID", login.getID());
+                requestParams.addQueryStringParameter("time", Utils.getCurrentDate());
             }
         };
         requestInfo.execute();

@@ -50,7 +50,7 @@ public class Const {
     public static final int START = 0;
     public static final int SUCCESS = 1;
     public static final int HTTP_SUCCESS = 200;
-    public static final int FAIL = 2;
+    public static final int FAIL = -1;
     public static final int PAGE_OFFSET = 20;
 
     private static String version = "1.0.0";

@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.sunning.riskpatrol.Const;
 import com.android.sunning.riskpatrol.entity.BaseEntity;
@@ -212,10 +213,16 @@ public class CheckResultActivity extends BaseActivity{
 
     private void submitCheckList() {
         final CreateCheckPointActivity createCheckPointActivity = (CreateCheckPointActivity) application.getSession().get(Const.KEY.CURRENT_CHECK_POINT);
+        LogUtils.e("hhhhhhhhhhhhhhhh"+createCheckPointActivity.rootDatum.toString()) ;
         HttpInteraction httpInteraction = new HttpInteraction() {
             @Override
             public void response(BaseEntity entity) {
-
+            	if(entity.code==Const.SUCCESS){
+            		Toast.makeText(CheckResultActivity.this,"提交成功",Toast.LENGTH_LONG).show();
+            	}else{
+            		Toast.makeText(CheckResultActivity.this,entity.message,Toast.LENGTH_LONG).show();
+            	}
+//            		Toast.makeText(CheckResultActivity.this,"提交成功",Toast.LENGTH_LONG).show();
             }
         } ;
         RequestInfo requestInfo = new RequestInfo(Const.InterfaceName.SUBMIT_CHECK_LIST , httpInteraction) {

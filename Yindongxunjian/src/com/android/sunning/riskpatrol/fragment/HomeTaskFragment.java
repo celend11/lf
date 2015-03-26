@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.sunning.riskpatrol.Const;
 import com.android.sunning.riskpatrol.activity.CreateCheckPointActivity;
@@ -57,10 +58,13 @@ public class HomeTaskFragment extends BaseFragment {
                 @Override
                 public void response(BaseEntity entity) {
                     homeEntity = (HomeEntity) entity;
-//                    DBHelper dbheler=DBHelper.getDbHelperInstance(getActivity());                   
-                    uiLevel = new Sorting().sort(homeEntity).obtainProcessFinishDatum() ;
-//                    dbheler.saveHomePageEntity(uiLevel.get(Const.CollectType.DAY));
-//                    Toast.makeText(getActivity(), dbheler.queryHomePageEntitys().get(0).creatorName, Toast.LENGTH_LONG).show();
+                    DBHelper dbheler=DBHelper.getDbHelperInstance(getActivity());                   
+                    uiLevel = new Sorting().sort(homeEntity).obtainProcessFinishDatum();
+                    int size=uiLevel.size();
+                    for(int i=0;i<size;i++){
+                    	dbheler.saveHomePageEntity(uiLevel.get(i),i);
+                    }
+//                    Toast.makeText(getActivity(), dbheler.queryHomePageEntitys().get(Const.CollectType.DAY).creatorName,Toast.LENGTH_LONG).show();
                     start();
                 }
             };
@@ -121,19 +125,19 @@ public class HomeTaskFragment extends BaseFragment {
         TextView dispatchName = (TextView) childView.findViewById(R.id.home_page_task_dispatch_name);
         TextView num = (TextView) childView.findViewById(R.id.home_page_task_num);
         TextView title = (TextView) childView.findViewById(R.id.home_page_task_patrol_name);
-        date.setText(Utils.formatJSONDate(entity.createDate)) ;
+        date.setText(Utils.formatJSONDate(entity.createDate));
         if(entity.isDispatch){
-            dispatchName.setText(entity.createDate) ;
+            dispatchName.setText(entity.creatorName+"派发") ;
         }else{
-            dispatchName.setVisibility(View.GONE) ;
+            dispatchName.setVisibility(View.GONE);
         }
-        num.setText("("+entity.inspectNumFormat+")") ;
+        num.setText("("+entity.inspectNumFormat+")");
         title.setText(entity.patrolItemName) ;
         childView.findViewById(R.id.home_page_child_item_parent_id).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity templateActivity = currentActivity.getActivityGroup();
-                getDatumByInsectNum(entity.inspectNum) ;
+                getDatumByInsectNum(entity.inspectNum);
                 Map<String,String> params = new HashMap<String, String>() ;
                 params.put(Const.KEY.URI,"") ;//填这个只是为了进下一个界面的时候bundle不为null
                 templateActivity.startActivityById(CreateCheckPointActivity.class.getName(), params) ;
@@ -142,7 +146,7 @@ public class HomeTaskFragment extends BaseFragment {
         return childView;
     }
 
-    private View createItem(final int index) {
+    private View createItem(final int index){
         final View item = inflater.inflate(R.layout.collapsible_item, null);
         TextView title = (TextView) item.findViewById(R.id.item_name);
         ImageView icon = (ImageView) item.findViewById(R.id.item_icon);
@@ -151,8 +155,12 @@ public class HomeTaskFragment extends BaseFragment {
             String[] res = data.split("&");
             if (res.length == 2) {
                 String titleRes = res[0];
+                int count=0;
+                if(uiLevel.get(index)!=null){
+                	count=uiLevel.get(index).size();
+                }
                 int iconRes = Integer.parseInt(res[1]);
-                title.setText(titleRes);
+                title.setText(titleRes+"("+count+")");
                 icon.setImageResource(iconRes);
             }
         }

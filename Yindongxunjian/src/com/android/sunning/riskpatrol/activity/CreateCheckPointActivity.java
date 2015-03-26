@@ -11,6 +11,7 @@ import com.android.sunning.riskpatrol.Const;
 import com.android.sunning.riskpatrol.custom.dialog.DateDialog;
 import com.android.sunning.riskpatrol.custom.dialog.EditTextDialog;
 import com.android.sunning.riskpatrol.entity.generate.Datum;
+import com.android.sunning.riskpatrol.entity.generate.ShouJianFuZeRen;
 import com.android.sunning.riskpatrol.entity.generate.login.Login;
 import com.android.sunning.riskpatrol.util.Utils;
 import com.example.yindongxunjian.R;
@@ -38,9 +39,9 @@ public class CreateCheckPointActivity extends BaseActivity{
         application.getSession().put(Const.KEY.CURRENT_CHECK_POINT , this) ;
     }
 
-    private void initDatum() {
+    private void initDatum(){
         String subTitle = null;
-        Bundle bundle = getIntent().getExtras() ;
+        Bundle bundle = getIntent().getExtras();
         if(bundle != null){
             if(bundle.containsKey(Const.KEY.CHECK_POINT_TITLE)){
                 subTitle = bundle.getString(Const.KEY.CHECK_POINT_TITLE);
@@ -50,11 +51,14 @@ public class CreateCheckPointActivity extends BaseActivity{
                 isNewCreate = true ;
                 bundle.remove(Const.KEY.CHECK_POINT_TYPE_NEW);
             }else{
-                isNewCreate = false ;
+                isNewCreate = false;
             }
         }
         if(isNewCreate){
             rootDatum = new Datum() ;
+            ShouJianFuZeRen sj=new ShouJianFuZeRen();
+            sj.setShouJianFuZeRenName("liangfu");
+            rootDatum.setShouJianFuZeRen(sj);
             rootDatum.setInspectTime(Utils.formatDateYYYYMMDD(System.currentTimeMillis())) ;
             Login login = dbHelper.queryCurrentLogin() ;
             rootDatum.setCreatorName(login.getName()) ;
@@ -118,6 +122,7 @@ public class CreateCheckPointActivity extends BaseActivity{
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						showbeizhu.setText(baseDialog.getText());
+						rootDatum.setBeiZhu(baseDialog.getText());
 						baseDialog.dismiss();
 					}
 				});

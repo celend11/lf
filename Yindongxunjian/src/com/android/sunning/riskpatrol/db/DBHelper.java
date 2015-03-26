@@ -5,6 +5,7 @@ import java.util.List;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.android.sunning.riskpatrol.Const;
 import com.android.sunning.riskpatrol.entity.HomePageEntity;
 import com.android.sunning.riskpatrol.entity.generate.HomeEntity;
 import com.android.sunning.riskpatrol.entity.generate.RiskElement;
@@ -202,8 +203,9 @@ public class DBHelper {
         }
         return siteList ;
     }
-    public void saveHomePageEntity(List<HomePageEntity> homePageEntitys){
+    public void saveHomePageEntity(List<HomePageEntity> homePageEntitys,int type){
         try {
+        	if(type==Const.CollectType.DAY)
             dbUtils.deleteAll(HomePageEntity.class) ;
         } catch (DbException e) {
             e.printStackTrace();

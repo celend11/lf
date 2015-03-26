@@ -163,7 +163,51 @@
                         android:layout_marginRight="@dimen/dp10"
                         android:src="@drawable/arrow_right_icon"/>
             </LinearLayout>
+		<include layout="@layout/line_all"/>
 
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:id="@+id/accepted_check_leader_parent_id"
+                    android:background="@drawable/list_view_item_selecter"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp55">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/textStyleSmall"
+                        android:layout_marginLeft="@dimen/dp10"
+                        android:text="受检查负责人"
+                        />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/textStyle"
+                        android:text="*"
+                        android:layout_marginLeft="@dimen/dp3"
+                        android:textColor="@color/red"
+                        />
+                <TextView
+                        android:layout_width="0dip"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp10"
+                        style="@style/editTextStyle"
+                        android:id="@+id/create_checked_point_leaderName_name_id"
+                        android:text="请选择"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        />
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp10"
+                        android:src="@drawable/arrow_right_icon"/>
+            </LinearLayout>
             <include layout="@layout/line_all"/>
 
             <LinearLayout
